@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RSVP</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.css" />
+    <style>
+        /* Sticky footer styles
+        -------------------------------------------------- */
+
+        html,
+        body {
+            height: 100%;
+            /* The html and body elements cannot have any padding or margin. */
+        }
+
+        /* Wrapper for page content to push down footer */
+        #wrap {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            /* Negative indent footer by its height */
+            margin: 0 auto -30px;
+            /* Pad bottom by footer height */
+            padding: 0 0 30px;
+        }
+
+        /* Set the fixed height of the footer here */
+        #footer {
+            height: 30px;
+            background-color: #336600;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+
+
+        /* Custom page CSS
+        -------------------------------------------------- */
+        /* Not required for template or sticky footer method. */
+
+        #wrap > .container {
+            padding: 30px 15px 0;
+        }
+
+        .container .credit {
+            margin: 20px 0;
+        }
+
+        #footer > .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        #rsvpAction {
+            padding: 10px;
+            text-align: center;
+            background-color: #C1FFC1;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: 5px 5px 5px black;
+            -webkit-box-shadow: 5px 5px 5px black;
+            box-shadow: 5px 5px 5px black;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">RSVP</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Begin page content -->
+        <div class="container">
+            <div id="rsvpAction">
+                <table id="tblRSVPEmailSubmit" style="margin: 0 auto;">
+                    <tr>
+                        <td><b>Enter Email to RSVP for the Game</b></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px 0px 0px 0px;">
+
+                            <input type="text" style="width: 180px; height: 25px;" id="txtrsvpEmail" />&nbsp;
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px 0px 5px 0px;">
+                            <input type="checkbox" id="chkSaveEmail" />&nbsp;Save email on this computer&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px 0px 0px 0px;"><a class="-button green" id="arsvpEmailSubmit" onclick="RSVPEmailSubmit();"><span class="-">Submit</span></a></td>
+
+                    </tr>
+
+                    <tr>
+                        <td style="padding: 0; color: red; position: absolute; margin-top: 5px;">
+                            <label id="RsvpEmailError"></label>
+
+                        </td>
+                    </tr>
+                </table>
+                <div style="border: solid 1px #3D800C; padding: 10px; display: none;" id="divrsvpSubmit">
+                    <a style="position: absolute; margin-top: -20px; margin-left: 120px; cursor: pointer;" onclick="RSVPSubmitCancel();">
+                        <img src="assets/images/CloseSmall.png" />
+                    </a>
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="lblRSVPPlayerInfo"></label>
+                                <input type="hidden" id="hdnRSVPPlayerID" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" name="group2" value="Playing" id="rdPlaying" onclick="showHideGuest('true');">&nbsp;Playing&nbsp;&nbsp;
+                                <input type="radio" name="group2" value="Not Playing" id="rdNotPlaying" onclick="showHideGuest('false');">&nbsp;Not Playing
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; display:none;" id="tdPlayingFields">
+
+                                <fieldset style=" font-size:10px; width:98%;  padding: 10px 5px 5px 5px;">
+                                    <div style=" font: bold 12px arial; ">Type:</div>
+                                    <table cellpadding="0" cellspacing="0" style="width:100%;">
+                                        <tr>
+                                            <td><b>TeeOff:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <select id="txtRSVPTeeOff" style="width: 70px; font-size:10px;">
+                                                    <option value="">--Select-- </option>
+                                                    <option value="Early">Early</option>
+                                                    <option value="Either">Either</option>
+                                                    <option value="Late">Late</option>
+                                                    <option value="After The Field">After the Field</option>
+                                                </select>
+                                                <!--   <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeOff" /></td>-->
+                                            <td style="padding-left: 15px;"><b>TeeBox:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <!--                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeBox" />-->
+                                                <select id="txtRSVPTeeBox" style="width: 70px; font-size:10px;">
+                                                    <option value="">--Select-- </option>
+                                                    <option value="Black">Black</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Forward">Forward</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="margin-top: 10px;"><b>Risk:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <!--<input type="text" style="width: 70px; height: 10px;" id="txtEditProfileRisk" />-->
+                                                <select id="txtRSVPRisk" style="width: 70px; font-size:10px;">
+                                                    <option value="">--Select-- </option>
+                                                    <option value="Low">Low</option>
+                                                    <option value="Moderate">Moderate</option>
+                                                    <option value="High">High</option>
+                                                </select>
+
+                                            </td>
+                                            <td style="padding-left: 15px;"><b>Mode:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <!--  <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileMode" />-->
+                                                <select id="txtRSVPMode" style="width: 70px; font-size:10px;">
+                                                    <option value="">--Select-- </option>
+                                                    <option value="Walk">Walk</option>
+                                                    <option value="Ride">Ride</option>
+                                                    <option value="Either">Either</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </fieldset>
+
+                                <div id="divGuests" style=" width: 95%; margin: 5px;">
+                                    <fieldset>
+                                        <div style=" font: bold 12px arial; padding-top: 10px;">&nbsp;Guests&nbsp;</div>
+                                        <table style="width: 100%; padding: 15px;">
+
+                                            <tr>
+
+                                                <td style="padding:5px;">
+                                                    <input type="text" placeholder="Guest 1" style="width: 145px; height: 20px;" id="txtGuest1" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:5px;">
+                                                    <input type="text" placeholder="Guest 2" style="width: 145px; height: 20px;" id="txtGuest2" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </fieldset>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; padding-top: 15px;">
+                                <a class="-button green" onclick="SubmitRSVP();"><span class="-">Submit</span></a>
+                                <label style="color: red; margin-top: 5px;" id="rsvpError"></label>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            Designed By - Shobhit Kasliwal
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/scripts.js"></script>
+    <script type="text/javascript" src="assets/scripts/GeneralScript.js?v=1"></script>
+    <script type="text/javascript">
+        function RSVPEmailSubmit() {
+            var GameId = '93'; //$('#hdnRSVPPopupGameId').val()
+            $('#rsvpAction').showLoading();
+            $('#rsvpError').html('');
+            $('#rdPlaying').removeAttr('checked');
+            $('#rdNotPlaying').removeAttr('checked');
+            $('#txtGuest1').val('');
+            $('#txtGuest2').val('');
+            $('#txtGuest1').watermark();
+            $('#txtGuest2').watermark();
+            $('#tdPlayingFields').hide();
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_ValidateRSVPEmail',
+                data: '{EmailAddress:"' + $('#txtrsvpEmail').val() + '",GameId:"' + GameId + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var obj = $.parseJSON(response.d);
+                    var Message = obj[0]['MESSAGE'];
+                    if (Message == "SUCCESS") {
+                        $('#lblRSVPPlayerInfo').html("<b>Name:</b>&nbsp;&nbsp;" + obj[0]['NAME'] + "<br><b>Email:</b>&nbsp;&nbsp;" + obj[0]['Email']);
+                        if (obj[0]['isPlaying'] != undefined && obj[0]['isPlaying'] != null) {
+                            if (obj[0]['isPlaying'] == true) {
+                                $('#rdPlaying').attr('checked', 'checked');
+                                $('#divGuests').show();
+                                var Guests = obj[0]['Guests'];
+                                if (Guests.length > 0) {
+                                    $('#txtGuest1').removeClass("marked");
+                                    $('#txtGuest1').val(Guests.toString().split("|")[0]);
+                                    if (Guests.toString().split("|").length > 1) {
+                                        $('#txtGuest2').removeClass("marked");
+                                        $('#txtGuest2').val(Guests.toString().split("|")[1]);
+                                    }
+                                }
+                            }
+                            else {
+                                $('#rdNotPlaying').attr('checked', 'checked');
+                                $('#divGuests').hide();
+                            }
+                        }
+                        if (obj[0]['RSVP_TeeOff'] != undefined && obj[0]['RSVP_TeeOff'] != null) {
+                            $('#txtRSVPTeeOff').val(obj[0]['RSVP_TeeOff']);
+                        }
+                        if (obj[0]['RSVP_TeeBox'] != undefined && obj[0]['RSVP_TeeBox'] != null) {
+                            $('#txtRSVPTeeBox').val(obj[0]['RSVP_TeeBox']);
+                        }
+                        if (obj[0]['RSVP_Risk'] != undefined && obj[0]['RSVP_Risk'] != null) {
+                            $('#txtRSVPRisk').val(obj[0]['RSVP_Risk']);
+                        }
+                        if (obj[0]['RSVP_Mode'] != undefined && obj[0]['RSVP_Mode'] != null) {
+                            $('#txtRSVPMode').val(obj[0]['RSVP_Mode']);
+                        }
+
+                        $('#hdnRSVPPlayerID').val(obj[0]['PlayerID']);
+
+                        $('#RsvpEmailError').html('');
+                        if ($('#chkSaveEmail').attr('checked') == 'checked') {
+                            $.cookie("SSLEVIN_GolfRsvpEmail", $('#txtrsvpEmail').val());
+                        }
+                        else {
+                            $.cookie("SSLEVIN_GolfRsvpEmail", null);
+                        }
+                    }
+                    else {
+                        $('#RsvpEmailError').html(Message);
+                    }
+                    setTimeout(function () {
+                        $('#rsvpAction').hideLoading();
+                        $('#tblRSVPEmailSubmit').hide();
+                        $('#divrsvpSubmit').show('blind');
+                    }, 500);
+                },
+                error: function (xhr, status, error) {
+                    $('#RsvpEmailError').html("An error occured while processing.<br>Please contact system administrator.");
+                    setTimeout(function () { $('#rsvpAction').hideLoading(); }, 500);
+                }
+            });
+
+        }
+        function RSVPSubmitCancel() {
+            $('#tblRSVPEmailSubmit').show('blind');
+            $('#divrsvpSubmit').hide();
+        }
+        function showHideGuest(show) {
+            if (show.toString().toLowerCase() == 'true')
+                $('#tdPlayingFields').show('blind');
+            else
+                $('#tdPlayingFields').hide('blind');
+        }
+    </script>
+
+
+</body>
+</html>

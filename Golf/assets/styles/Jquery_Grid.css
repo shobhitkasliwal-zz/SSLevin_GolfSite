@@ -1,0 +1,381 @@
+﻿.dataTables_scroll {
+    border: 1px solid #3D800C;
+}
+
+.dataTables_wrapper {
+    width: 99%;
+    padding: 2px;
+}
+
+#tdResult .dataTables_wrapper, #tblSelectUserResult.dataTables_wrapper {
+    width: 100%;
+    padding: 2px;
+}
+
+#tdResult div.dataTables_wrapper .fg-toolbar {
+    background-color: #4DA20F;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4DA20F, endColorstr=#3D800C);
+    background-image: -moz-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -webkit-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -ms-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -o-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(30%,#4DA20F), color-stop(47%,#3D800C));
+    color: white;
+    height: 28px;
+    padding-top: 5px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.dataTables_scrollHeadInner {
+    background-color: #4DA20F;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4DA20F, endColorstr=#3D800C);
+    background-image: -moz-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -webkit-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -ms-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -o-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(30%,#4DA20F), color-stop(47%,#3D800C));
+}
+
+div.dataTables_length {
+    float: left !important;
+    text-align: right;
+    text-align: center;
+    padding-top:10px;
+}
+
+#tblPlayers div.dataTables_filter {
+    float: right !important;
+    /*text-align: right;
+    padding-right: 15px;
+    width: 28%;*/
+
+height:0px; width:0px;
+display:none;
+}
+
+div.dataTables_info {
+    float: left !important;
+    width: 45%;
+    vertical-align: middle;
+    padding: 5px 10px 0px 10px;
+    height: 25px;
+}
+
+div.dataTables_paginate {
+    float: right !important;
+    text-align: right;
+    vertical-align: middle;
+    padding: 15px 10px 0px 10px;
+    
+    height: 25px;
+}
+
+
+.paging_full_numbers .ui-button {
+    padding: 2px 6px;
+    margin: 0;
+    cursor: pointer;
+    /* color: white !important;*/
+}
+
+.paging_full_numbers span .ui-state-disabled {
+    border: 1px solid;
+}
+
+table.dataTable thead th {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 20px;
+    text-align: center !important;
+    font-weight: bold;
+    color: white;
+    font: 14px verdana;
+    vertical-align: middle;
+    text-decoration: none;
+    background-color: #4DA20F;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#4DA20F, endColorstr=#3D800C);
+    background-image: -moz-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -webkit-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -ms-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -o-linear-gradient(top, #4DA20F 30%, #3D800C 47%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(30%,#4DA20F), color-stop(47%,#3D800C));
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.table.dataTable tfoot th {
+padding-top:20px;
+border: 1px solid; 
+
+}
+/* Body cells */
+table.dataTable tbody th {
+    text-align: center;
+    background: #91c5d4;
+}
+
+table.dataTable tbody td {
+    text-align: center;
+    background-color: transparent;
+    
+}
+
+table.dataTable tbody tr.odd td {
+    background: #E4E4E4;
+    
+    
+}
+
+.dataTable .bottom {
+padding:20px;
+
+}
+/*
+ * Sorting
+ */
+table.dataTable thead th.sorting_asc {
+    background: #66A9BD url('../../images/All_State/sort_asc.png') no-repeat right center;
+}
+
+table.dataTable thead th.sorting_desc {
+    background: #66A9BD url('../../images/All_State/sort_desc.png') no-repeat right center;
+}
+
+table.dataTable thead th.sorting {
+    background: #66A9BD url('../../images/All_State/sort_both.png') no-repeat right center;
+}
+
+
+table.dataTable tr.even.row_selected td {
+    background-color: #E91C24;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E91C24, endColorstr=#8c1b42);
+    background-image: -moz-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -webkit-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -ms-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -o-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%,#E91C24), color-stop(100%,#8c1b42));
+    color: white;
+}
+
+table.dataTable tr.odd.row_selected td {
+    background-color: #E91C24;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E91C24, endColorstr=#8c1b42);
+    background-image: -moz-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -webkit-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -ms-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -o-linear-gradient(top, #E91C24 0%, #8c1b42 100%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%,#E91C24), color-stop(100%,#8c1b42));
+    color: white;
+}
+
+
+tfoot input {
+    margin: 0.5em 0;
+    width: 100%;
+    color: #444;
+}
+
+    tfoot input.search_init {
+        color: #999;
+    }
+
+
+/**************************************************************/
+/*
+ * File:        TableTools.css
+ * Description: Styles for TableTools 2 with JUI theming
+ * Author:      Allan Jardine (www.sprymedia.co.uk)
+ * Language:    Javascript
+ * License:     LGPL / 3 point BSD
+ * Project:     DataTables
+ * 
+ * Copyright 2010 Allan Jardine, all rights reserved.
+ *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *
+ * Notes:
+ *   Generally speaking, please refer to the TableTools.css file - this file contains basic
+ *   modifications to that 'master' stylesheet for ThemeRoller.
+ *
+ * CSS name space:
+ *   DTTT                  DataTables TableTools
+ *
+ * Colour dictionary:
+ *   Button border         #d0d0d0
+ *   Button border hover   #999999
+ *   Hover background      #f0f0f0
+ *   Action blue           #4b66d9
+ *
+ * Style sheet provides:
+ *   CONTAINER             TableTools container element and styles applying to all components
+ *   SELECTING             Row selection styles
+ *   COLLECTIONS           Drop down list (collection) styles
+ *   PRINTING              Print display styles
+ *   MISC                  Minor misc styles
+ */
+
+
+/*
+ * CONTAINER
+ * TableTools container element and styles applying to all components
+ */
+div.DTTT_container {
+    position: relative;
+    float: left;
+    width: 26%;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+
+.DTTT_button {
+    position: relative;
+    margin-right: 3px;
+    padding: 3px 10px;
+    height: 20px;
+    background-color: #8DC951;
+    color: white;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#8DC951, endColorstr=#4D9D2D);
+    background-image: -moz-linear-gradient(right, #8DC951 0%, #4D9D2D 59%);
+    background-image: -webkit-linear-gradient(right, #8DC951 0%, #4D9D2D 59%);
+    background-image: -ms-linear-gradient(right, #8DC951 0%, #4D9D2D 59%);
+    background-image: linear-gradient(right, #8DC951 0%, #4D9D2D 59%);
+    background-image: -o-linear-gradient(right, #8DC951 0%, #4D9D2D 59%);
+    background-image: -webkit-gradient(linear, right bottom, left bottom, color-stop(0%,#8DC951), color-stop(59%,#4D9D2D));
+    cursor: pointer;
+    *cursor: hand;
+}
+
+    .DTTT_button::-moz-focus-inner {
+        border: none !important;
+        padding: 0;
+    }
+
+
+
+/*
+ * SELECTING
+ * Row selection styles
+ */
+table.DTTT_selectable tbody tr {
+    cursor: pointer;
+    *cursor: hand;
+}
+
+table.dataTable tr.DTTT_selected.odd {
+    background-color: #9FAFD1;
+}
+
+    table.dataTable tr.DTTT_selected.odd td.sorting_1 {
+        background-color: #9FAFD1;
+    }
+
+    table.dataTable tr.DTTT_selected.odd td.sorting_2 {
+        background-color: #9FAFD1;
+    }
+
+    table.dataTable tr.DTTT_selected.odd td.sorting_3 {
+        background-color: #9FAFD1;
+    }
+
+
+table.dataTable tr.DTTT_selected.even {
+    background-color: #B0BED9;
+}
+
+    table.dataTable tr.DTTT_selected.even td.sorting_1 {
+        background-color: #B0BED9;
+    }
+
+    table.dataTable tr.DTTT_selected.even td.sorting_2 {
+        background-color: #B0BED9;
+    }
+
+    table.dataTable tr.DTTT_selected.even td.sorting_3 {
+        background-color: #B0BED9;
+    }
+
+
+/*
+ * COLLECTIONS
+ * Drop down list (collection) styles
+ */
+
+div.DTTT_collection {
+    width: 200px;
+    background-color: #f3f3f3;
+    overflow: hidden;
+    z-index: 2002;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+}
+
+div.DTTT_collection_background {
+    background: url(../images/background.png) repeat top left;
+    z-index: 2001;
+}
+
+div.DTTT_collection button.DTTT_button,
+div.DTTT_collection div.DTTT_button,
+div.DTTT_collection a.DTTT_button {
+    float: none;
+    width: 100%;
+    margin-bottom: -0.1em;
+}
+
+
+/*
+ * PRINTING
+ * Print display styles
+ */
+
+.DTTT_print_info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 150px;
+    margin-left: -200px;
+    margin-top: -75px;
+    text-align: center;
+    background-color: #3f3f3f;
+    color: white;
+    padding: 10px 30px;
+    opacity: 0.9;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+    .DTTT_print_info h6 {
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 28px;
+        margin: 1em;
+    }
+
+    .DTTT_print_info p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+
+/*
+ * MISC
+ * Minor misc styles
+ */
+
+.DTTT_disabled {
+    color: #999;
+}

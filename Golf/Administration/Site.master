@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+    protected void Logout_click(object sender, EventArgs e)
+    {
+        Session.RemoveAll();
+        FormsAuthentication.SignOut();
+        Response.Redirect("../index.html");
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request.Url.ToString().ToLower().Contains("adminlogin"))
+        {
+        lnklogout.Visible=false;
+        }
+        else{
+        lnklogout.Visible=true;
+        }
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SSLEVIN Golf Club</title>
+    <link rel="stylesheet" type="text/css" href="../assets/styles/style.css" media="screen" />
+    <link rel="stylesheet" href="../assets/styles/Jquery_Grid.css" />
+    <link rel="stylesheet" href="../assets/styles/Popup.css" />
+    <link rel="stylesheet" href="../assets/styles/AdminFunctions.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/scripts/scripts.js"></script>
+    <script type="text/javascript" src="../assets/scripts/GeneralScript.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <header style="position: relative; top: 0px; left: -25px; padding: 0px; bottom: 0px;">
+                <img src="../assets/images/Banner.jpg" alt="" style="width: 1010px; height: 150px;" />
+            </header>
+            <div style="float: right; margin-right: 65px;">
+                <asp:LinkButton ID="lnklogout" runat="server" Text="Logout" Style="color: white; cursor: pointer; position: absolute; text-decoration: underline; z-index: 10001; margin-top: 10px;" OnClick="Logout_click"></asp:LinkButton>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+        <footer>
+            <div class="social right">
+                <hr>
+                <p class="left">
+                    Designed By - Shobhit Kasliwal<br>
+                    Application Developer @Liventus Inc.<br>
+                    3400 Dundee Road Northbrook, IL - 60062
+                </p>
+
+
+            </div>
+        </footer>
+    </form>
+    <div id="mask"></div>
+
+
+</body>
+</html>

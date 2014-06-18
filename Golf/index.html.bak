@@ -1,0 +1,975 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SSLEVIN Golf Club</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css" media="screen" />
+    <link rel="stylesheet" href="assets/styles/fullcalendar.css">
+    <link rel="stylesheet" href="assets/styles/Jquery_Grid.css">
+    <link rel="stylesheet" href="assets/styles/Popup.css">
+    <!--[if lt IE 9]><script type="text/javascript" src="assets/scripts/modernizr.js"></script><![endif]-->
+</head>
+<body>
+    <section id="top"></section>
+    <div class="wrapper">
+        <header style="position: relative; top: 0px; left: -25px; padding: 0px; bottom: 0px;">
+            <img src="assets/images/Banner.jpg" alt="" style="width: 1010px; height: 150px;" />
+        </header>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="#top" class="selected">Home</a></li>
+                    <li><a href="#players">Players</a></li>
+
+                </ul>
+                <div class="nav-left"></div>
+                <div class="nav-right"></div>
+                <div class="nav-above"></div>
+            </nav>
+            <a href="Administration/AdminLogin.aspx" style="text-decoration: underline; position: absolute; margin-left: 870px; margin-top: -35px; z-index: 100001; color: white;">Administration</a>
+        </div>
+        <section id="home">
+            <div id="HomePageWrapper">
+
+                <h1 class="title">Home</h1>
+
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <div style="width: 600px; margin-left: 50px; display: block;" id="divCalendarWrapper">
+                                <div id='calendar' style="width: 100%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="divUpcomingGamesWrapper" style="float: left; position: absolute; font-size: 20px; font-weight: bold; margin-left: -270px; border: 1px solid #3D800C; min-height: 350px;">
+                                <span class="solidheader" style="padding-left: 50px; padding-right: 50px; width: 100%; font-size: 16px; font-weight: bold; padding-top: 5px; padding-bottom: 5px;">Upcoming&nbsp;Games</span>
+                                <div id="divupcomingGames" style="font-size: 14px; padding: 10px; width: 100%; height: 320px; display: none;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+            <hr>
+        </section>
+        <section id="players">
+            <div id="PalyersPageWrapper">
+                <h1 class="title">Players</h1>
+                <hr>
+                <a style="cursor: pointer; text-decoration: underline;" onclick="ShowEditProfilePopup()">Edit Your Profile</a>
+                <div>
+                    <table style="width: 100%; height: 100%; padding: 0px;" id="tblPlayers">
+                        <thead>
+                            <tr>
+                                <th style="width: 120px;">Name</th>
+                                <th>Email Address</th>
+                                <th>Tee Off</th>
+                                <th>Tee Box</th>
+                                <th>Risk</th>
+                                <th>Walk or Ride</th>
+                                <th>Wednesday Game</th>
+                                <th>Friday Game</th>
+                                <th>Saturday Game</th>
+                                <th>Sunday Game</th>
+                                <th>Active</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th rowspan="1" colspan="1">
+                                    <input type="text" name="search_Name" value="Name" class="search_init" style="height: 10px;"></th>
+                                <th rowspan="1" colspan="1">
+                                    <input type="text" name="search_Email" value="Email Address" class="search_init" style="height: 10px;"></th>
+                                <th rowspan="1" colspan="1">
+                                    <input type="text" name="search_TeeOffm" value="Tee Off" class="search_init" style="height: 10px;"></th>
+                                <th rowspan="1" colspan="1">
+                                    <input type="text" name="search_TeeBox" value="Tee Box" class="search_init" style="height: 10px;"></th>
+                                <th rowspan="1" colspan="1">
+                                    <input type="text" name="search_Risk" value="Risk" class="search_init" style="height: 10px;"></th>
+                                <th rowspan="1" colspan="1">
+                                    <input type="text" name="search_Mode" value="Mode" class="search_init" style="width: 50px; height: 10px;"></th>
+                                <th rowspan="1" colspan="1">
+                                    <select style="width: 70px;">
+                                        <option></option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </th>
+                                <th rowspan="1" colspan="1">
+                                    <select style="width: 70px;">
+                                        <option></option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </th>
+                                <th rowspan="1" colspan="1">
+                                    <select style="width: 70px;">
+                                        <option></option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </th>
+                                <th rowspan="1" colspan="1">
+                                    <select style="width: 70px;">
+                                        <option></option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </th>
+                                <th rowspan="1" colspan="1">
+                                    <select style="width: 70px;">
+                                        <option></option>
+                                        <option>True</option>
+                                        <option>False</option>
+                                    </select>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="social right">
+                <hr>
+                <p class="left">
+                    Designed By - Shobhit Kasliwal<br>
+                    Application Developer @Liventus Inc.<br>
+                    3400 Dundee Road Northbrook, IL - 60062
+                </p>
+
+
+            </div>
+        </footer>
+    </div>
+
+    <div class="NormalModalPopup">
+        <div class="RSVPPopup">
+            <div class="header">
+                <label id="GamePopupTitle"></label>
+            </div>
+            <div class="content">
+
+                <div id="RSVP_PopupContent_wrapper">
+                    <div style="padding: 10px; vertical-align: top;">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="width: 55%;">
+                                    <table style="border: 1px solid #3D800C; padding: 20px 0px 10px 20px; min-height: 190px; width: 100%; margin: auto auto;">
+
+                                        <tr>
+                                            <td style="width: 90px;"><b>Game Date:</b></td>
+                                            <td>
+                                                <label id="lblGameDate"></label>
+                                                <input type="hidden" id="hdnRSVPPopupGameId" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Game Time:</b></td>
+                                            <td>
+                                                <label id="lblGameTime"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <label id="lblAttendance"></label>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <div style="border: 1px solid #3D800C; width: 98%; min-height: 190px;" id="divPopupRSVPSection">
+                                        <div class="solidheader" style="width: 100%;">RSVP</div>
+                                        <div style="padding: 10px; text-align: center;">
+                                            <table id="tblRSVPEmailSubmit" style="margin: 0 auto;">
+                                                <tr>
+                                                    <td><b>Enter Email to RSVP for the Game</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px 0px 0px 0px;">
+
+                                                        <input type="text" style="width: 180px; height: 10px;" id="txtrsvpEmail" />&nbsp;
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 0px 0px 5px 0px;">
+                                                        <input type="checkbox" id="chkSaveEmail" />&nbsp;Save email on this computer&nbsp;&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 15px 0px 0px 0px;"><a href="#" class="-button green" id="arsvpEmailSubmit" onclick="RSVPEmailSubmit();"><span class="-">Submit</span></a></td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding: 0px; color: red; position: absolute; margin-top: 5px;">
+                                                        <label id="RsvpEmailError"></label>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div style="border: solid 1px #3D800C; padding: 10px; display: none;" id="divrsvpSubmit">
+                                                <a style="position: absolute; margin-top: -20px; margin-left: 120px; cursor: pointer;" onclick="RSVPSubmitCancel();">
+                                                    <img src="assets/images/CloseSmall.png" /></a>
+                                                <table style="margin: 0 auto;">
+                                                    <tr>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label id="lblRSVPPlayerInfo"></label>
+                                                            <input type="hidden" id="hdnRSVPPlayerID" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="radio" name="group2" value="Playing" id="rdPlaying" onclick="showHideGuest('true');">&nbsp;Playing&nbsp;&nbsp;
+                                                        <input type="radio" name="group2" value="Not Playing" id="rdNotPlaying" onclick="showHideGuest('false');">&nbsp;Not Playing
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: left;">
+                                                            <div id="divGuests" style="display: none; width: 95%; margin: 5px;">
+                                                                <fieldset style="border: solid 1px #3D800C;">
+                                                                    <legend style="text-align: center; font: bold 12px arial; padding: 0px;">&nbsp;Guests&nbsp;</legend>
+                                                                    <table style="width: 100%; padding: 0px; padding: 5px;">
+
+                                                                        <tr>
+                                                                            <td>1.</td>
+                                                                            <td>
+                                                                                <input type="text" class="watermark" title="Guest1 Name" style="width: 145px; height: 10px;" id="txtGuest1" /></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>2.</td>
+                                                                            <td>
+                                                                                <input type="text" class="watermark" title="Guest2 Name" style="width: 145px; height: 10px;" id="txtGuest2" /></td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </fieldset>
+
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center; padding-top: 15px;"><a href="#" class="-button green" onclick="SubmitRSVP();"><span class="-">Submit</span></a>
+                                                            <label style="color: red; margin-top: 5px;" id="rsvpError"></label>
+                                                        </td>
+                                                    </tr>
+
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <table style="width: 100%; height: 100%; padding: 0px;" id="tblGameAttending">
+                        <thead>
+                            <tr>
+                                <th>Attending</th>
+                                <th>Not Attending</th>
+                                <th>Not Responded</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="NormalModalPopup">
+        <div class="EditPlayerPopup">
+            <div class="header">
+                Update Profile
+            </div>
+            <div id="divEditProfileLogin" style="margin: 50px; border: solid 1px #3D800C">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td style="padding: 15px;"><b>Email Address:</b></td>
+                        <td style="padding: 15px;">
+                            <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileEmail" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 15px;"><b>Password:</b></td>
+                        <td style="padding: 15px;">
+                            <input type="password" style="width: 180px; height: 10px;" id="txtEditProfilePassword" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding: 15px;">
+                            <a href="#" class="-button green" id="a1" onclick="EditProfileAuthenticate();"><span class="-">Submit</span></a>
+
+                        </td>
+                    </tr>
+
+                </table>
+                <div style="text-align: center; position: absolute; padding: 10px; color: red;">
+
+                    <label id="lblEditProfileAuthenticateError"></label>
+
+                </div>
+            </div>
+            <div id="divEditProfileForm" style="display: none; padding: 10px;">
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td style="padding: 5px;"><b>Name:</b></td>
+                        <td>
+                            <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileName" />
+                            <input type="hidden" id="hdnEditProfilePlayerId" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;"><b>Email:</b></td>
+                        <td>
+                            <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileFormEmail" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+
+                            <fieldset style="border: solid 1px #3D800C; width: 350px; padding: 0px 15px 15px 15px;">
+                                <legend>Type</legend>
+                                <table>
+                                    <tr>
+                                        <td><b>Tee Off:</b></td>
+                                        <td style="padding-left: 5px;">
+                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeOff" /></td>
+                                        <td style="padding-left: 25px;"><b>Too Box:</b></td>
+                                        <td style="padding-left: 5px;">
+                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeBox" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="margin-top: 10px;"><b>Risk:</b></td>
+                                        <td style="padding-left: 5px;">
+                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileRisk" /></td>
+                                        <td style="padding-left: 25px;"><b>Walk or Ride:</b></td>
+                                        <td style="padding-left: 5px;">
+                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileMode" /></td>
+                                    </tr>
+                                </table>
+
+                            </fieldset>
+
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <fieldset style="border: solid 1px #3D800C; padding: 0px 15px 15px 15px; margin: 0 auto;">
+                                <legend style="padding-left: 10px;">Weekly Games</legend>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" id="chkUpdateProfileWednesdayGame" /></td>
+                                        <td><b>Wednesday</b></td>
+                                        <td style="padding-left: 10px;">
+                                            <input type="checkbox" id="chkUpdateProfileFridayGame" /></td>
+                                        <td><b>Friday</b></td>
+
+                                        <td style="padding-left: 10px;">
+                                            <input type="checkbox" id="chkUpdateProfileSaturdayGame" /></td>
+                                        <td><b>Saturday</b></td>
+                                        <td style="padding-left: 10px;">
+                                            <input type="checkbox" id="chkUpdateProfileSundayGame" /></td>
+                                        <td><b>Sunday</b></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; padding: 15px;">
+                            <a href="#" class="-button green" id="a2" onclick="UpdateProfile();"><span class="-">Update</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center; color: red;">
+                            <label id="lblUpdateProfileMessage"></label>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div id="mask"></div>
+    <!--[if lt IE9]>
+            <script type="text/javascript" src="assets/scripts/JSON2.js"></script>
+        <![endif]-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/scripts.js"></script>
+    <script type="text/javascript" src="assets/scripts/GeneralScript.js?v=1"></script>
+    <script src="assets/scripts/fullcalendar.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+    <script>
+        var APPLICATIONID = '4A1BD17C-50F5-4E51-8C3F-B161BAB5E411';
+        $(document).ready(function () {
+            $('.watermark').watermark();
+            var windowHeight = $(window).height();
+            $('#HomePageWrapper').height(windowHeight);
+            $('#PalyersPageWrapper').height(windowHeight);
+            $('#divUpcomingGamesWrapper').showLoading();
+            $('#PalyersPageWrapper').showLoading();
+
+            PopulateCalendar();
+
+            setTimeout('BindPlayers();', 200);
+            setTimeout(function () {
+                var QRGameID = GetQueryStringValue("GameID");
+                var QRGAmeDate = GetQueryStringValue("GameDate");
+                var QREmail = GetQueryStringValue("Email");
+                if (QRGameID != "") {
+
+                    OpenRSVPPopup(QRGameID, true);
+                    $('#txtrsvpEmail').val(QREmail);
+
+                }
+
+            }, 500);
+        });
+
+
+
+        var oGameDetailTable;
+        function PopulateCalendar() {
+
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_RetriveGames',
+                data: '{ ApplicationID: "' + APPLICATIONID + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var obj = $.parseJSON(response.d);
+                    setTimeout(function () { PopulateUpcomingGames(obj); }, 2000);
+                    $('#calendar').fullCalendar({
+                        editable: true,
+                        BackgroundColor: '#000',
+                        disableDragging: true,
+                        events: obj,
+                        eventClick: function (calEvent, jsEvent, view) { OpenRSVPPopup(calEvent.GameID); },
+                        eventRender: function (event, element, view) {
+                            var eventdate = new Date(event.start);
+                            var today = new Date();
+                            if ((today - eventdate) > 0) {
+                                //   return false;
+                                $(element).removeClass('fc-event');
+                                $(element).addClass('pastdate');
+                                $(element).click(function (e) {
+                                    stopPropagation();
+                                });
+                            }
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+            });
+        }
+
+
+        var oPlayersTable;
+        var asInitVals = new Array();
+        function BindPlayers() {
+
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_RetrivePlayers',
+                data: '{ ApplicationID: "' + APPLICATIONID + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    renderTable(response.d);
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                    //ShowStaticPopup('<div> System is unable to process your request at this time.<br>Please try again later.</div>', "Error", null, false);
+
+                }
+            });
+
+            function renderTable(result) {
+                var obj = $.parseJSON(result);
+                var dtData = [];
+                $.each(obj, function (index, element) {
+
+                    dtData.push([
+                     this.FullName,
+                         this.EmailAddress,
+                          this.TeeOff,
+                         this.TeeBox,
+                         this.Risk,
+                         this.Mode,
+                         this.WednesdayGame,
+                         this.FridayGame,
+                         this.SaturdayGame,
+                         this.SundayGame,
+                         this.Enable
+
+
+                    ]);
+
+
+                });
+                oPlayersTable = $('#tblPlayers').dataTable({  //grid is the id of the table
+                    'aaData': dtData,
+                    "bDestroy": true,
+                    'bPaginate': true,
+                    "sPaginationType": "full_numbers",
+                    "iDisplayLength": 10,
+                    'bInfo': false,
+                    'bFilter': true,
+                    "bJQueryUI": true,
+                    "bSort": true,
+                    "bAutoWidth": true,
+
+                    "sDom": '<"top"i>rt<"bottom"flp>'
+                    /*,"aoColumns": [
+                    null, null, null, null, null,
+                    { "bVisible": false }, { "bVisible": false }
+                ]*/
+                });
+                /* Add a select menu for each TH element in the table footer */
+
+                $('#tblPlayers_filter').css("display", "none");
+                $("tfoot input").keyup(function () {
+                    /* Filter on the column (the index) of this element */
+                    oPlayersTable.fnFilter(this.value, $("tfoot input").index(this));
+                });
+
+                /* Add a select menu for each TH element in the table footer */
+                $("tfoot th").each(function (i) {
+                    // this.innerHTML = fnCreateSelect(oTable.fnGetColumnData(i));
+                    $('select', this).change(function () {
+                        oPlayersTable.fnFilter($(this).val(), i);
+                    });
+                });
+
+
+                /*
+     * Support functions to provide a little bit of 'user friendlyness' to the textboxes in
+     * the footer
+     */
+                $("tfoot input").each(function (i) {
+                    asInitVals[i] = this.value;
+                });
+
+                $("tfoot input").focus(function () {
+                    if (this.className == "search_init") {
+                        this.className = "";
+                        this.value = "";
+                    }
+                });
+
+                $("tfoot input").blur(function (i) {
+                    if (this.value == "") {
+                        this.className = "search_init";
+                        this.value = asInitVals[$("tfoot input").index(this)];
+                    }
+                });
+
+            }
+            $('#PalyersPageWrapper').hideLoading();
+        }
+
+        function PopulateUpcomingGames(arr) {
+
+            if (arr == null) {
+                $('#divUpcomingGamesWrapper').hideLoading();
+                return;
+            }
+            var GamefoundCount = 0;
+            var indvGameStartDate = "";
+            var upcomingGamesHtml = "";
+            var today = new Date();
+
+            for (var i = 0 ; i < arr.length ; i++) {
+                if (GamefoundCount >= 5)
+                    break;
+                indvGameStartDate = new Date(arr[i].start);
+                if ((today - indvGameStartDate) < 0) {
+                    upcomingGamesHtml += "<tr><td style='padding:10px;'> <img src='assets/images/upcomingIndicator.png' />&nbsp;&nbsp;<a style='cursor:pointer;' onclick=\"OpenRSVPPopup('" + arr[i].GameID + "');\" > " + arr[i].title + " </a>";
+                    upcomingGamesHtml += "<br>&nbsp;&nbsp;<b>" + $.datepicker.formatDate('DD, d MM, yy', indvGameStartDate); + "</b></td></tr>";
+                    GamefoundCount = GamefoundCount + 1;
+                }
+
+            }
+            if (upcomingGamesHtml != "") {
+                $('#divupcomingGames').html('<table>' + upcomingGamesHtml + '</table>');
+            }
+            else {
+                $('#divupcomingGames').html("<div style='width:100%; text-align:center;'><br><br><b>No Games Available</b></div>");
+            }
+            $('#divUpcomingGamesWrapper').hideLoading();
+            $('#divupcomingGames').show('blind');
+
+        }
+
+        function OpenRSVPPopup(GameID, OpenPopup) {
+            $('#hdnRSVPPopupGameId').val(GameID);
+            $('#txtrsvpEmail').val('');
+            $('#RsvpEmailError').html('');
+            if ($.cookie("SSLEVIN_GolfRsvpEmail") != undefined) {
+                $('#txtrsvpEmail').val($.cookie("SSLEVIN_GolfRsvpEmail"));
+                $('#chkSaveEmail').attr('checked', 'checked');
+            }
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_RetriveGameDetail',
+                data: '{GameID:"' + GameID + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var obj = $.parseJSON(response.d);
+                    oGameDetailTable = $('#tblGameAttending').dataTable({  //grid is the id of the table
+                        'aaData': obj.Attending,
+                        "bDestroy": true,
+                        'bPaginate': true,
+                        "sPaginationType": "full_numbers",
+                        "iDisplayLength": 10,
+                        'bInfo': false,
+                        'bFilter': true,
+                        "bJQueryUI": true,
+                        "bSort": true,
+                        "bAutoWidth": true,
+                        "sDom": '<"top"i>rt<"bottom"flp>',
+                        "sScrollY": "150px",
+                        "bScrollCollapse": true,
+                        "oLanguage": {
+                            "sSearch": ""
+                        }
+                        /*,"aoColumns": [
+                        null, null, null, null, null,
+                        { "bVisible": false }, { "bVisible": false }
+                    ]*/
+                    });
+                    if (oGameDetailTable.length > 0) {
+                        setTimeout(function () {
+                            $(oGameDetailTable).css({ width: $(oGameDetailTable).parent().width() });
+                            oGameDetailTable.fnAdjustColumnSizing();
+                        }, 200);
+                    }
+                    oGameDetailTable.fnSort([[0, 'desc']]);
+                    $('#tblGameAttending_filter input[type=text]').val("Enter Player Name To Search");
+                    $('#tblGameAttending_filter input[type=text]').addClass("search_init");
+                    $('#tblGameAttending_filter input[type=text]').focus(function () {
+                        if (this.className == "search_init") {
+                            this.className = "";
+                            this.value = "";
+                        }
+                    });
+
+                    $('#tblGameAttending_filter input[type=text]').blur(function (i) {
+                        if (this.value == "") {
+                            this.className = "search_init";
+                            this.value = "Enter Player Name To Search";
+                        }
+                    });
+                    //lblGameDate, lblGameTime, lblAttending
+                    var Gameinfo = obj.GameInfo;
+                    $('#lblGameDate').html(Gameinfo[0][2]);
+                    $('#lblGameTime').html(Gameinfo[0][3]);
+                    var playinginfo = "<b>Playing:</b>&nbsp;" + Gameinfo[0][4];
+                    playinginfo += "&nbsp;&nbsp;&nbsp;&nbsp;<b>Not&nbsp;Playing:</b>&nbsp;" + Gameinfo[0][5];
+                    playinginfo += "&nbsp;&nbsp;&nbsp;&nbsp;<b>Not&nbsp;Responded:</b>&nbsp;" + Gameinfo[0][6];
+
+
+                    if (isNaN(Date.parse(Gameinfo[0][2])) == false) {
+                        var GameDate = new Date(Date.parse(Gameinfo[0][2]));
+                        if (GameDate.valueOf() <= (new Date()).valueOf()) {
+                            OpenPopup = false;
+                        }
+                    }
+
+                    $('#lblAttendance').html(playinginfo);
+
+                    $('#txtrsvpEmail').focus();
+                    $('#GamePopupTitle').html(Gameinfo[0][1]);
+                    // $('#lblAttending').html(Gameinfo[0]);
+                    //  new FixedColumns(oGameDetailTable);
+                    if (OpenPopup != false) {
+                        launchPopup('.NormalModalPopup .RSVPPopup', 670, false, true);
+                        $('#tblRSVPEmailSubmit').show();
+                        $('#divrsvpSubmit').hide('blind');
+
+                    }
+
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+            });
+        }
+
+
+
+        function RSVPEmailSubmit() {
+            $('#divPopupRSVPSection').showLoading();
+            $('#rsvpError').html('');
+            $('#rdPlaying').removeAttr('checked');
+            $('#rdNotPlaying').removeAttr('checked');
+            $('#txtGuest1').val('');
+            $('#txtGuest2').val('');
+            $('#txtGuest1').watermark();
+            $('#txtGuest2').watermark();
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_ValidateRSVPEmail',
+                data: '{EmailAddress:"' + $('#txtrsvpEmail').val() + '",GameId:"' + $('#hdnRSVPPopupGameId').val() + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var obj = $.parseJSON(response.d);
+                    var Message = obj[0]['MESSAGE'];
+                    if (Message == "SUCCESS") {
+                        $('#lblRSVPPlayerInfo').html("<b>Name:</b>&nbsp;&nbsp;" + obj[0]['NAME'] + "<br><b>Email:</b>&nbsp;&nbsp;" + obj[0]['Email']);
+                        if (obj[0]['isPlaying'] != undefined && obj[0]['isPlaying'] != null) {
+                            if (obj[0]['isPlaying'] == true) {
+                                $('#rdPlaying').attr('checked', 'checked');
+                                $('#divGuests').show();
+                                var Guests = obj[0]['Guests'];
+                                if (Guests.length > 0) {
+                                    $('#txtGuest1').removeClass("marked");
+                                    $('#txtGuest1').val(Guests.toString().split("|")[0]);
+                                    if (Guests.toString().split("|").length > 1) {
+                                        $('#txtGuest2').removeClass("marked");
+                                        $('#txtGuest2').val(Guests.toString().split("|")[1]);
+                                    }
+                                }
+                            }
+                            else {
+                                $('#rdNotPlaying').attr('checked', 'checked');
+                                $('#divGuests').hide();
+                            }
+                        }
+                        $('#hdnRSVPPlayerID').val(obj[0]['PlayerID']);
+
+                        $('#RsvpEmailError').html('');
+                        if ($('#chkSaveEmail').attr('checked') == 'checked') {
+                            $.cookie("SSLEVIN_GolfRsvpEmail", $('#txtrsvpEmail').val());
+                        }
+                        else {
+                            $.cookie("SSLEVIN_GolfRsvpEmail", null);
+                        }
+                    }
+                    else {
+                        $('#RsvpEmailError').html(Message);
+                    }
+                    setTimeout(function () {
+                        $('#divPopupRSVPSection').hideLoading();
+                        $('#tblRSVPEmailSubmit').hide();
+                        $('#divrsvpSubmit').show('blind');
+                    }, 500);
+                },
+                error: function (xhr, status, error) {
+                    $('#RsvpEmailError').html("An error occured while processing.<br>Please contact system administrator.");
+                    setTimeout(function () { $('#divPopupRSVPSection').hideLoading(); }, 500);
+                }
+            });
+
+        }
+        function RSVPSubmitCancel() {
+            $('#tblRSVPEmailSubmit').show('blind');
+            $('#divrsvpSubmit').hide();
+        }
+
+        function SubmitRSVP() {
+            var Guest1 = $('#txtGuest1').val();
+            var Guest2 = $('#txtGuest2').val();
+            var Guests = '';
+            if (Guest1 == $('#txtGuest1').attr('title'))
+                Guest1 = '';
+            if (Guest2 == $('#txtGuest2').attr('title'))
+                Guest2 = '';
+            Guests += Guest1;
+            Guests += (Guests.length > 0 && Guest2.length > 0 ? '|' : '') + Guest2;
+            $('#divPopupRSVPSection').showLoading();
+            var isPlaying;
+
+            if ($('#rdPlaying').attr('checked') == "checked") {
+                isPlaying = true;
+            }
+            if ($('#rdNotPlaying').attr('checked') == "checked") {
+                isPlaying = false;
+            }
+            if (isPlaying == undefined || isPlaying == null) {
+                $('#rsvpError').html("Please check an option.");
+                return;
+            }
+
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_RSVP_Game',
+                data: '{PlayerId:"' + $('#hdnRSVPPlayerID').val() + '",GameId:"' + $('#hdnRSVPPopupGameId').val() + '",isPlaying:"' + isPlaying + '",Guests:"' + Guests + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    OpenRSVPPopup($('#hdnRSVPPopupGameId').val(), false);
+                    setTimeout(function () {
+                        $('#divPopupRSVPSection').hideLoading(); $('#tblRSVPEmailSubmit').show('blind');
+                        $('#divrsvpSubmit').hide();
+                    }, 500);
+                },
+                error: function (xhr, status, error) {
+                    $('#RsvpEmailError').html("An error occured while processing.<br>Please contact system administrator.");
+                    setTimeout(function () { $('#divPopupRSVPSection').hideLoading(); }, 500);
+                }
+            });
+        }
+
+        function ShowEditProfilePopup() {
+
+            $('#divEditProfileLogin').show();
+            $('#divEditProfileForm').hide();
+            $('#txtEditProfileEmail').val('');
+            $('#txtEditProfilePassword').val('');
+            $('#lblEditProfileAuthenticateError').html('');
+            $('#divEditProfileForm input[type=text]').val('');
+            $('#divEditProfileForm input[type=checkbox]').removeAttr('checked');
+            $('#lblUpdateProfileMessage').html('');
+            launchPopup('.NormalModalPopup .EditPlayerPopup', 550, false, true);
+        }
+
+        function EditProfileAuthenticate() {
+            $('#divEditProfileLogin').showLoading();
+            setTimeout(function () {
+                $.ajax({
+                    type: "Post",
+                    url: 'Webservices/GolfService.asmx/Web_ReturnUserInfoAfterAuthentication',
+                    data: '{Email:"' + $('#txtEditProfileEmail').val() + '",Password:"' + $('#txtEditProfilePassword').val() + '",ApplicationID: "' + APPLICATIONID + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $('#divEditProfileLogin').hideLoading();
+                        var obj = $.parseJSON(response.d);
+                        var Message = obj[0]['MESSAGE'];
+                        if (Message == "SUCCESS") {
+                            $('#hdnEditProfilePlayerId').val(obj[0]['PlayerID']);
+                            $('#txtEditProfileName').val(obj[0]['FullName']);
+                            $('#txtEditProfileFormEmail').val(obj[0]['EmailAddress']);
+                            $('#txtEditProfileTeeOff').val(obj[0]['TeeOff']);
+                            $('#txtEditProfileTeeBox').val(obj[0]['TeeBox']);
+                            $('#txtEditProfileRisk').val(obj[0]['Risk']);
+                            $('#txtEditProfileMode').val(obj[0]['Mode']);
+                            if (obj[0]['WednesdayGame'] != undefined && obj[0]['WednesdayGame'] != null && obj[0]['WednesdayGame'] == true) {
+                                $('#chkUpdateProfileWednesdayGame').attr('checked', 'checked');
+                            }
+                            if (obj[0]['FridayGame'] != undefined && obj[0]['FridayGame'] != null && obj[0]['FridayGame'] == true) {
+                                $('#chkUpdateProfileFridayGame').attr('checked', 'checked');
+                            }
+                            if (obj[0]['SaturdayGame'] != undefined && obj[0]['SaturdayGame'] != null && obj[0]['SaturdayGame'] == true) {
+                                $('#chkUpdateProfileSaturdayGame').attr('checked', 'checked');
+                            }
+                            if (obj[0]['SundayGame'] != undefined && obj[0]['SundayGame'] != null && obj[0]['SundayGame'] == true) {
+                                $('#chkUpdateProfileSundayGame').attr('checked', 'checked');
+                            }
+
+                            $('#divEditProfileLogin').hide();
+                            $('#divEditProfileForm').show('blind');
+                        }
+                        else { $('#lblEditProfileAuthenticateError').html(Message); }
+                    },
+                    error: function (xhr, status, error) {
+                        $('#divEditProfileLogin').hideLoading();
+                        $('#lblEditProfileAuthenticateError').html("An error occured while processing. Please contact system administrator.");
+                    }
+                });
+            }, 500);
+
+
+        }
+
+        function UpdateProfile() {
+            $('#divEditProfileForm').showLoading();
+            $('#lblUpdateProfileMessage').html('');
+            if ($('#txtEditProfileName').val().trim().length == 0) {
+                $('#lblUpdateProfileMessage').html("Please enter full name.");
+                return;
+            }
+            var email = $('#txtEditProfileFormEmail').val().trim();
+            if ((!isValidEmailAddress(email)) || email.length == 0) {
+                $('#lblUpdateProfileMessage').html('Please provide a valid email address');
+                return;
+            }
+            var datastring = '{';
+            datastring += 'PlayerId:"' + $('#hdnEditProfilePlayerId').val() + '",';
+            datastring += 'FullName:"' + $('#txtEditProfileName').val() + '",';
+            datastring += 'Email:"' + email + '",';
+            if ($('#chkUpdateProfileWednesdayGame').attr('checked') == 'checked') datastring += 'WedGame:"true",';
+            else datastring += 'WedGame:"false",';
+            if ($('#chkUpdateProfileFridayGame').attr('checked') == 'checked') datastring += 'FriGame:"true",';
+            else datastring += 'FriGame:"false",';
+            if ($('#chkUpdateProfileSaturdayGame').attr('checked') == 'checked') datastring += 'SatGame:"true",';
+            else datastring += 'SatGame:"false",';
+            if ($('#chkUpdateProfileSundayGame').attr('checked') == 'checked') datastring += 'SunGame:"true",';
+            else datastring += 'SunGame:"false",';
+            datastring += 'Enable:"",';
+            datastring += 'Teeoff:"' + $('#txtEditProfileTeeOff').val() + '",';
+            datastring += 'TeeBox:"' + $('#txtEditProfileTeeBox').val() + '",';
+            datastring += 'Mode:"' + $('#txtEditProfileMode').val() + '",';
+            datastring += 'Risk:"' + $('#txtEditProfileRisk').val() + '",';
+            datastring += 'Password:"",';
+            datastring += 'CreatedBy:"",';
+            datastring += 'ModifyBy:"' + $('#txtEditProfileName').val() + '"}';
+
+
+            setTimeout(function () {
+                $.ajax({
+                    type: "Post",
+                    url: 'Webservices/GolfService.asmx/Web_InsertUpdateUserProfile',
+                    data: datastring,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $('#divEditProfileForm').hideLoading();
+                        var obj = $.parseJSON(response.d);
+                        var Message = obj[0].Message;
+                        if (Message == "SUCCESS") {
+                            BindPlayers();
+                            setTimeout(function () { $('#lblUpdateProfileMessage').html('Profile updated successfully !'); }, 200);
+                        }
+                        else { $('#lblUpdateProfileMessage').html(Message); }
+                    },
+                    error: function (xhr, status, error) {
+                        $('#divEditProfileForm').hideLoading();
+                        $('#lblUpdateProfileMessage').html("An error occured while processing. Please contact system administrator.");
+                    }
+                });
+            }, 500);
+
+
+        }
+
+        function showHideGuest(show) {
+            if (show.toString().toLowerCase() == 'true')
+                $('#divGuests').show('blind');
+            else
+                $('#divGuests').hide('blind');
+        }
+    </script>
+
+
+</body>
+</html>

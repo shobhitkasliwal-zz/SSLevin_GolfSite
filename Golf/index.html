@@ -9,611 +9,616 @@
     <link rel="stylesheet" href="assets/styles/Popup.css">
     <!--[if lt IE 9]><script type="text/javascript" src="assets/scripts/modernizr.js"></script><![endif]-->
 </head>
-<body> 
+<body>
+    <div id="divindexPage">
+        <section id="top"></section>
+        <div class="wrapper">
+            <header style="position: relative; top: 0px; left: -25px; padding: 0px; bottom: 0px;">
+                <img src="assets/images/Banner.jpg" alt="" style="width: 1010px; height: 150px;" />
+            </header>
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="#top" class="selected">Home</a></li>
+                        <li><a href="#players">Players</a></li>
 
-    <section id="top"></section>
-    <div class="wrapper">
-        <header style="position: relative; top: 0px; left: -25px; padding: 0px; bottom: 0px;">
-            <img src="assets/images/Banner.jpg" alt="" style="width: 1010px; height: 150px;" />
-        </header>
-        <div class="nav-container">
-            <nav>
-                <ul>
-                    <li><a href="#top" class="selected">Home</a></li>
-                    <li><a href="#players">Players</a></li>
-
-                </ul>
-                <div class="nav-left"></div>
-                <div class="nav-right"></div>
-                <div class="nav-above"></div>
-            </nav>
-            <a href="Administration/AdminLogin.aspx" style="text-decoration: underline; position: absolute; margin-left: 870px; margin-top: -35px; z-index: 100001; color: white;">Administration</a>
-        </div>
-        <section id="home">
-            <div id="HomePageWrapper">
-
-                <h1 class="title">Home</h1>
-
-                <table style="width: 100%;">
-                    <tr>
-                        <td>
-                            <div style="width: 600px; margin-left: 50px; display: block;" id="divCalendarWrapper">
-                                <div id='calendar' style="width: 100%;"></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div id="divUpcomingGamesWrapper" style="float: left; position: absolute; font-size: 20px; font-weight: bold; margin-left: -270px; border: 1px solid #3D800C; min-height: 350px;">
-                                <span class="solidheader" style="padding-left: 50px; padding-right: 50px; width: 100%; font-size: 16px; font-weight: bold; padding-top: 5px; padding-bottom: 5px;">Upcoming&nbsp;Games</span>
-                                <div id="divupcomingGames" style="font-size: 14px; padding: 10px; width: 100%; height: 320px; display: none;"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                    </ul>
+                    <div class="nav-left"></div>
+                    <div class="nav-right"></div>
+                    <div class="nav-above"></div>
+                </nav>
+                <a href="Administration/AdminLogin.aspx" style="text-decoration: underline; position: absolute; margin-left: 870px; margin-top: -35px; z-index: 100001; color: white;">Administration</a>
             </div>
+            <section id="home">
+                <div id="HomePageWrapper">
 
+                    <h1 class="title">Home</h1>
 
-
-            <hr>
-        </section>
-        <section id="players">
-            <div id="PalyersPageWrapper">
-                <h1 class="title">Players</h1>
-                <hr>
-                <a style="cursor: pointer; text-decoration: underline;" onclick="ShowEditProfilePopup()">Edit Your Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a style="cursor: pointer; text-decoration: underline;" onclick="ChangePasswordPopup()">Change Password</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a style="cursor: pointer; text-decoration: underline;" onclick="ResetPasswordPopup()">Reset Password</a>
-                <div>
-                    <table style="width: 100%; height: 100%; padding: 0px;" id="tblPlayers">
-                        <thead>
-                            <tr>
-                                <th style="width: 120px;">Name</th>
-                                <th>Email Address</th>
-                                <th>Tee Off</th>
-                                <th>Tee Box</th>
-                                <th>Risk</th>
-                                <th>Walk or Ride</th>
-                                <th>Wednesday Game</th>
-                                <th>Friday Game</th>
-                                <th>Saturday Game</th>
-                                <th>Sunday Game</th>
-                                <!-- <th>Active</th>-->
-                            </tr>
-
-                        </thead>
-                        <tbody></tbody>
-                        <tfoot>
-                            <tr>
-                                <th rowspan="1" colspan="1">
-                                    <input type="text" name="search_Name" value="Name" class="search_init" style="height: 10px;">
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <input type="text" name="search_Email" value="Email Address" class="search_init" style="height: 10px;">
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <input type="text" name="search_TeeOffm" value="Tee Off" class="search_init" style="height: 10px;">
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <input type="text" name="search_TeeBox" value="Tee Box" class="search_init" style="height: 10px;">
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <input type="text" name="search_Risk" value="Risk" class="search_init" style="height: 10px;">
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <input type="text" name="search_Mode" value="Mode" class="search_init" style="width: 50px; height: 10px;">
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <select style="width: 70px;">
-                                        <option></option>
-                                        <option>True</option>
-                                        <option>False</option>
-                                    </select>
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <select style="width: 70px;">
-                                        <option></option>
-                                        <option>True</option>
-                                        <option>False</option>
-                                    </select>
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <select style="width: 70px;">
-                                        <option></option>
-                                        <option>True</option>
-                                        <option>False</option>
-                                    </select>
-                                </th>
-                                <th rowspan="1" colspan="1">
-                                    <select style="width: 70px;">
-                                        <option></option>
-                                        <option>True</option>
-                                        <option>False</option>
-                                    </select>
-                                </th>
-                                <!-- <th rowspan="1" colspan="1">
-                                     <select style="width: 70px;">
-                                         <option></option>
-                                         <option>True</option>
-                                         <option>False</option>
-                                     </select>
-                                 </th>-->
-                            </tr>
-                        </tfoot>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <div style="width: 600px; margin-left: 50px; display: block;" id="divCalendarWrapper">
+                                    <div id='calendar' style="width: 100%;"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div id="divUpcomingGamesWrapper" style="float: left; position: absolute; font-size: 20px; font-weight: bold; margin-left: -270px; border: 1px solid #3D800C; min-height: 350px;">
+                                    <span class="solidheader" style="padding-left: 50px; padding-right: 50px; width: 100%; font-size: 16px; font-weight: bold; padding-top: 5px; padding-bottom: 5px;">Upcoming&nbsp;Games</span>
+                                    <div id="divupcomingGames" style="font-size: 14px; padding: 10px; width: 100%; height: 320px; display: none;"></div>
+                                </div>
+                            </td>
+                        </tr>
                     </table>
                 </div>
-            </div>
-        </section>
 
 
-        <footer></footer>
-    </div>
-    <div style="margin: 0 auto; width: 960px; text-align: right; color: white;">
-        <hr>
-        <p>
-            Designed By - Shobhit Kasliwal<br>
-            Application Developer @Liventus Inc.<br>
-            3400 Dundee Road Northbrook, IL - 60062
-        </p>
+
+                <hr>
+            </section>
+            <section id="players">
+                <div id="PalyersPageWrapper">
+                    <h1 class="title">Players</h1>
+                    <hr>
+                    <a style="cursor: pointer; text-decoration: underline;" onclick="ShowEditProfilePopup()">Edit Your Profile</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a style="cursor: pointer; text-decoration: underline;" onclick="ChangePasswordPopup()">Change Password</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <a style="cursor: pointer; text-decoration: underline;" onclick="ResetPasswordPopup()">Reset Password</a>
+                    <div>
+                        <table style="width: 100%; height: 100%; padding: 0px;" id="tblPlayers">
+                            <thead>
+                                <tr>
+                                    <th style="width: 120px;">Name</th>
+                                    <th>Email Address</th>
+                                    <th>Tee Off</th>
+                                    <th>Tee Box</th>
+                                    <th>Risk</th>
+                                    <th>Walk or Ride</th>
+                                    <th>Wednesday Game</th>
+                                    <th>Friday Game</th>
+                                    <th>Saturday Game</th>
+                                    <th>Sunday Game</th>
+                                    <!-- <th>Active</th>-->
+                                </tr>
+
+                            </thead>
+                            <tbody></tbody>
+                            <tfoot>
+                                <tr>
+                                    <th rowspan="1" colspan="1">
+                                        <input type="text" name="search_Name" value="Name" class="search_init" style="height: 10px;">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <input type="text" name="search_Email" value="Email Address" class="search_init" style="height: 10px;">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <input type="text" name="search_TeeOffm" value="Tee Off" class="search_init" style="height: 10px;">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <input type="text" name="search_TeeBox" value="Tee Box" class="search_init" style="height: 10px;">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <input type="text" name="search_Risk" value="Risk" class="search_init" style="height: 10px;">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <input type="text" name="search_Mode" value="Mode" class="search_init" style="width: 50px; height: 10px;">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <select style="width: 70px;">
+                                            <option></option>
+                                            <option>True</option>
+                                            <option>False</option>
+                                        </select>
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <select style="width: 70px;">
+                                            <option></option>
+                                            <option>True</option>
+                                            <option>False</option>
+                                        </select>
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <select style="width: 70px;">
+                                            <option></option>
+                                            <option>True</option>
+                                            <option>False</option>
+                                        </select>
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        <select style="width: 70px;">
+                                            <option></option>
+                                            <option>True</option>
+                                            <option>False</option>
+                                        </select>
+                                    </th>
+                                    <!-- <th rowspan="1" colspan="1">
+                                         <select style="width: 70px;">
+                                             <option></option>
+                                             <option>True</option>
+                                             <option>False</option>
+                                         </select>
+                                     </th>-->
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </section>
 
 
-    </div>
-    <div class="NormalModalPopup">
-        <div class="RSVPPopup">
-            <div class="header">
-                <label id="GamePopupTitle"></label>
-            </div>
-            <div class="content">
+            <footer></footer>
+        </div>
+        <div style="margin: 0 auto; width: 960px; text-align: right; color: white;">
+            <hr>
+            <p>
+                Designed By - Shobhit Kasliwal<br>
+                Application Developer @Liventus Inc.<br>
+                3400 Dundee Road Northbrook, IL - 60062
+            </p>
 
-                <div id="RSVP_PopupContent_wrapper">
-                    <div style="padding: 10px; vertical-align: top;">
-                        <table style="width: 100%;">
-                            <tr>
-                                <td style="width: 55%;">
-                                    <table style="border: 1px solid #3D800C; padding: 20px 0px 10px 20px; min-height: 190px; width: 100%; margin: auto auto;">
-                                        <tr>
-                                            <td style="width: 90px;"><b>Captain:</b></td>
-                                            <td>
-                                                <label id="lblGameCaptain"></label>
-                                                <input type="hidden" id="Hidden1" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 90px;"><b>Game Date:</b></td>
-                                            <td>
-                                                <label id="lblGameDate"></label>
-                                                <input type="hidden" id="hdnRSVPPopupGameId" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Game Time:</b></td>
-                                            <td>
-                                                <label id="lblGameTime"></label>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <label id="lblAttendance"></label>
-                                            </td>
-                                        </tr>
 
-                                    </table>
-                                </td>
-                                <td style="vertical-align: top;">
-                                    <div style="border: 1px solid #3D800C; width: 98%; min-height: 190px;" id="divPopupRSVPSection">
-                                        <div class="solidheader" style="width: 100%;">RSVP</div>
-                                        <div style="padding: 10px; text-align: center;">
-                                            <table id="tblRSVPEmailSubmit" style="margin: 0 auto;">
-                                                <tr>
-                                                    <td><b>Enter Email to RSVP for the Game</b></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 15px 0px 0px 0px;">
+        </div>
+        <div class="NormalModalPopup">
+            <div class="RSVPPopup">
+                <div class="header">
+                    <label id="GamePopupTitle"></label>
+                </div>
+                <div class="content">
 
-                                                        <input type="text" style="width: 180px; height: 10px;" id="txtrsvpEmail" />&nbsp;
+                    <div id="RSVP_PopupContent_wrapper">
+                        <div style="padding: 10px; vertical-align: top;">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="width: 55%;">
+                                        <table style="border: 1px solid #3D800C; padding: 20px 0px 10px 20px; min-height: 190px; width: 100%; margin: auto auto;">
+                                            <tr>
+                                                <td style="width: 90px;"><b>Captain:</b></td>
+                                                <td>
+                                                    <label id="lblGameCaptain"></label>
+                                                    <input type="hidden" id="Hidden1" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 90px;"><b>Game Date:</b></td>
+                                                <td>
+                                                    <label id="lblGameDate"></label>
+                                                    <input type="hidden" id="hdnRSVPPopupGameId" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Game Time:</b></td>
+                                                <td>
+                                                    <label id="lblGameTime"></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <label id="lblAttendance"></label>
+                                                </td>
+                                            </tr>
 
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 0px 0px 5px 0px;">
-                                                        <input type="checkbox" id="chkSaveEmail" />&nbsp;Save email on this computer&nbsp;&nbsp;
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 15px 0px 0px 0px;"><a class="-button green" id="arsvpEmailSubmit" onclick="RSVPEmailSubmit();"><span class="-">Submit</span></a></td>
-
-                                                </tr>
-
-                                                <tr>
-                                                    <td style="padding: 0px; color: red; position: absolute; margin-top: 5px;">
-                                                        <label id="RsvpEmailError"></label>
-
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                            <div style="border: solid 1px #3D800C; padding: 10px; display: none;" id="divrsvpSubmit">
-                                                <a style="position: absolute; margin-top: -20px; margin-left: 120px; cursor: pointer;" onclick="RSVPSubmitCancel();">
-                                                    <img src="assets/images/CloseSmall.png" />
-                                                </a>
-                                                <table style="margin: 0 auto;">
+                                        </table>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <div style="border: 1px solid #3D800C; width: 98%; min-height: 190px;" id="divPopupRSVPSection">
+                                            <div class="solidheader" style="width: 100%;">RSVP</div>
+                                            <div style="padding: 10px; text-align: center;">
+                                                <table id="tblRSVPEmailSubmit" style="margin: 0 auto;">
                                                     <tr>
-                                                        <td></td>
+                                                        <td><b>Enter Email to RSVP for the Game</b></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            <label id="lblRSVPPlayerInfo"></label>
-                                                            <input type="hidden" id="hdnRSVPPlayerID" />
+                                                        <td style="padding: 15px 0px 0px 0px;">
+
+                                                            <input type="text" style="width: 180px; height: 10px;" id="txtrsvpEmail" />&nbsp;
+
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>
-                                                            <input type="radio" name="group2" value="Playing" id="rdPlaying" onclick="showHideGuest('true');">&nbsp;Playing&nbsp;&nbsp;
-                                                            <input type="radio" name="group2" value="Not Playing" id="rdNotPlaying" onclick="showHideGuest('false');">&nbsp;Not Playing
+                                                        <td style="padding: 0px 0px 5px 0px;">
+                                                            <input type="checkbox" id="chkSaveEmail" />&nbsp;Save email on this computer&nbsp;&nbsp;
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="text-align: left; display:none;" id="tdPlayingFields">
+                                                        <td style="padding: 15px 0px 0px 0px;"><a class="-button green" id="arsvpEmailSubmit" onclick="RSVPEmailSubmit();"><span class="-">Submit</span></a></td>
 
-                                                            <fieldset style="border: solid 1px #3D800C; font-size:10px; width:95%;  padding: 0px 5px 5px 5px;">
-                                                                <legend>Type</legend>
-                                                                <table cellpadding="0" cellspacing="0" style="width:100%;">
-                                                                    <tr>
-                                                                        <td><b>TeeOff:</b></td>
-                                                                        <td style="padding-left: 5px;">
-                                                                            <select id="txtRSVPTeeOff" style="width: 70px; font-size:10px;">
-                                                                                <option value="">--Select-- </option>
-                                                                                <option value="Early">Early</option>
-                                                                                <option value="Either">Either</option>
-                                                                                <option value="Late">Late</option>
-                                                                                <option value="After The Field">After the Field</option>
-                                                                            </select>
-                                                                            <!--   <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeOff" /></td>-->
-                                                                        <td style="padding-left: 15px;"><b>TeeBox:</b></td>
-                                                                        <td style="padding-left: 5px;">
-                                                                            <!--                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeBox" />-->
-                                                                            <select id="txtRSVPTeeBox" style="width: 70px; font-size:10px;">
-                                                                                <option value="">--Select-- </option>
-                                                                                <option value="Black">Black</option>
-                                                                                <option value="Blue">Blue</option>
-                                                                                <option value="White">White</option>
-                                                                                <option value="Forward">Forward</option>
-                                                                            </select>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td style="margin-top: 10px;"><b>Risk:</b></td>
-                                                                        <td style="padding-left: 5px;">
-                                                                            <!--<input type="text" style="width: 70px; height: 10px;" id="txtEditProfileRisk" />-->
-                                                                            <select id="txtRSVPRisk" style="width: 70px; font-size:10px;">
-                                                                                <option value="">--Select-- </option>
-                                                                                <option value="Low">Low</option>
-                                                                                <option value="Moderate">Moderate</option>
-                                                                                <option value="High">High</option>
-                                                                            </select>
+                                                    </tr>
 
-                                                                        </td>
-                                                                        <td style="padding-left: 15px;"><b>Mode:</b></td>
-                                                                        <td style="padding-left: 5px;">
-                                                                            <!--  <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileMode" />-->
-                                                                            <select id="txtRSVPMode" style="width: 70px; font-size:10px;">
-                                                                                <option value="">--Select-- </option>
-                                                                                <option value="Walk">Walk</option>
-                                                                                <option value="Ride">Ride</option>
-                                                                                <option value="Either">Either</option>
-                                                                            </select>
-                                                                        </td>
-                                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding: 0px; color: red; position: absolute; margin-top: 5px;">
+                                                            <label id="RsvpEmailError"></label>
 
-                                                                </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <div style="border: solid 1px #3D800C; padding: 10px; display: none;" id="divrsvpSubmit">
+                                                    <a style="position: absolute; margin-top: -20px; margin-left: 120px; cursor: pointer;" onclick="RSVPSubmitCancel();">
+                                                        <img src="assets/images/CloseSmall.png" />
+                                                    </a>
+                                                    <table style="margin: 0 auto;">
+                                                        <tr>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label id="lblRSVPPlayerInfo"></label>
+                                                                <input type="hidden" id="hdnRSVPPlayerID" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="radio" name="group2" value="Playing" id="rdPlaying" onclick="showHideGuest('true');">&nbsp;Playing&nbsp;&nbsp;
+                                                                <input type="radio" name="group2" value="Not Playing" id="rdNotPlaying" onclick="showHideGuest('false');">&nbsp;Not Playing
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: left; display:none;" id="tdPlayingFields">
 
-                                                            </fieldset>
-
-                                                            <div id="divGuests" style=" width: 95%; margin: 5px;">
-                                                                <fieldset style="border: solid 1px #3D800C;">
-                                                                    <legend style="text-align: center; font: bold 12px arial; padding: 0px;">&nbsp;Guests&nbsp;</legend>
-                                                                    <table style="width: 100%; padding: 0px; padding: 5px;">
-
+                                                                <fieldset style="border: solid 1px #3D800C; font-size:10px; width:95%;  padding: 0px 5px 5px 5px;">
+                                                                    <legend>Type</legend>
+                                                                    <table cellpadding="0" cellspacing="0" style="width:100%;">
                                                                         <tr>
-                                                                            <td>1.</td>
-                                                                            <td>
-                                                                                <input type="text" class="watermark" title="Guest1 Name" style="width: 145px; height: 10px;" id="txtGuest1" />
+                                                                            <td><b>TeeOff:</b></td>
+                                                                            <td style="padding-left: 5px;">
+                                                                                <select id="txtRSVPTeeOff" style="width: 70px; font-size:10px;">
+                                                                                    <option value="">--Select-- </option>
+                                                                                    <option value="Early">Early</option>
+                                                                                    <option value="Either">Either</option>
+                                                                                    <option value="Late">Late</option>
+                                                                                    <option value="After The Field">After the Field</option>
+                                                                                </select>
+                                                                                <!--   <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeOff" /></td>-->
+                                                                            <td style="padding-left: 15px;"><b>TeeBox:</b></td>
+                                                                            <td style="padding-left: 5px;">
+                                                                                <!--                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeBox" />-->
+                                                                                <select id="txtRSVPTeeBox" style="width: 70px; font-size:10px;">
+                                                                                    <option value="">--Select-- </option>
+                                                                                    <option value="Black">Black</option>
+                                                                                    <option value="Blue">Blue</option>
+                                                                                    <option value="White">White</option>
+                                                                                    <option value="Forward">Forward</option>
+                                                                                </select>
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <td>2.</td>
-                                                                            <td>
-                                                                                <input type="text" class="watermark" title="Guest2 Name" style="width: 145px; height: 10px;" id="txtGuest2" />
+                                                                            <td style="margin-top: 10px;"><b>Risk:</b></td>
+                                                                            <td style="padding-left: 5px;">
+                                                                                <!--<input type="text" style="width: 70px; height: 10px;" id="txtEditProfileRisk" />-->
+                                                                                <select id="txtRSVPRisk" style="width: 70px; font-size:10px;">
+                                                                                    <option value="">--Select-- </option>
+                                                                                    <option value="Low">Low</option>
+                                                                                    <option value="Moderate">Moderate</option>
+                                                                                    <option value="High">High</option>
+                                                                                </select>
+
+                                                                            </td>
+                                                                            <td style="padding-left: 15px;"><b>Mode:</b></td>
+                                                                            <td style="padding-left: 5px;">
+                                                                                <!--  <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileMode" />-->
+                                                                                <select id="txtRSVPMode" style="width: 70px; font-size:10px;">
+                                                                                    <option value="">--Select-- </option>
+                                                                                    <option value="Walk">Walk</option>
+                                                                                    <option value="Ride">Ride</option>
+                                                                                    <option value="Either">Either</option>
+                                                                                </select>
                                                                             </td>
                                                                         </tr>
+
                                                                     </table>
+
                                                                 </fieldset>
 
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center; padding-top: 15px;">
-                                                            <a class="-button green" onclick="SubmitRSVP();"><span class="-">Submit</span></a>
-                                                            <label style="color: red; margin-top: 5px;" id="rsvpError"></label>
-                                                        </td>
-                                                    </tr>
+                                                                <div id="divGuests" style=" width: 95%; margin: 5px;">
+                                                                    <fieldset style="border: solid 1px #3D800C;">
+                                                                        <legend style="text-align: center; font: bold 12px arial; padding: 0px;">&nbsp;Guests&nbsp;</legend>
+                                                                        <table style="width: 100%; padding: 0px; padding: 5px;">
 
-                                                </table>
+                                                                            <tr>
+                                                                                <td>1.</td>
+                                                                                <td>
+                                                                                    <input type="text" class="watermark" title="Guest1 Name" style="width: 145px; height: 10px;" id="txtGuest1" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2.</td>
+                                                                                <td>
+                                                                                    <input type="text" class="watermark" title="Guest2 Name" style="width: 145px; height: 10px;" id="txtGuest2" />
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </fieldset>
+
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: center; padding-top: 15px;">
+                                                                <a class="-button green" onclick="SubmitRSVP();"><span class="-">Submit</span></a>
+                                                                <label style="color: red; margin-top: 5px;" id="rsvpError"></label>
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
 
                                             </div>
 
                                         </div>
 
-                                    </div>
+                                    </td>
+                                </tr>
+                            </table>
 
-                                </td>
-                            </tr>
+                        </div>
+
+                        <table style="width: 100%; height: 100%; padding: 0px;" id="tblGameAttending">
+                            <thead>
+                                <tr>
+                                    <th>Attending</th>
+                                    <th>Not Attending</th>
+                                    <th>Not Responded</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="NormalModalPopup">
+            <div class="EditPlayerPopup">
+                <div class="header">
+                    Update Profile
+                </div>
+                <div id="divEditProfileLogin" style="margin: 50px; border: solid 1px #3D800C">
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <td style="padding: 15px;"><b>Email Address:</b></td>
+                            <td style="padding: 15px;">
+                                <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileEmail" />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 15px;"><b>Password:</b></td>
+                            <td style="padding: 15px;">
+                                <input type="password" style="width: 180px; height: 10px;" id="txtEditProfilePassword" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <a style="cursor: pointer; text-decoration: underline;" onclick="ResetPasswordPopup()">Reset Password</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center; padding: 15px;">
+                                <a class="-button green" id="ancEditProfileAuthenticateSubmit" onclick="EditProfileAuthenticate();"><span class="-">Submit</span></a>
+
+                            </td>
+                        </tr>
+
+                    </table>
+                    <div style="text-align: center; position: absolute; padding: 10px; color: red;">
+
+                        <label id="lblEditProfileAuthenticateError"></label>
 
                     </div>
+                </div>
+                <div id="divEditProfileForm" style="display: none; padding: 10px;">
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <td style="padding: 5px;"><b>Name:</b></td>
+                            <td>
+                                <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileName" />
+                                <input type="hidden" id="hdnEditProfilePlayerId" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px;"><b>Email:</b></td>
+                            <td>
+                                <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileFormEmail" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
 
-                    <table style="width: 100%; height: 100%; padding: 0px;" id="tblGameAttending">
-                        <thead>
-                            <tr>
-                                <th>Attending</th>
-                                <th>Not Attending</th>
-                                <th>Not Responded</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
+                                <fieldset style="border: solid 1px #3D800C; width: 400px; padding: 0px 15px 15px 15px;">
+                                    <legend>Type</legend>
+                                    <table>
+                                        <tr>
+                                            <td><b>Tee Off:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <select id="txtEditProfileTeeOff" style="width: 110px;">
+                                                    <option value="">--Select One -- </option>
+                                                    <option value="Early">Early</option>
+                                                    <option value="Either">Either</option>
+                                                    <option value="Late">Late</option>
+                                                    <option value="After The Field">After the Field</option>
+                                                </select>
+                                                <!--   <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeOff" /></td>-->
+                                            <td style="padding-left: 25px;"><b>Tee Box:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <!--                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeBox" />-->
+                                                <select id="txtEditProfileTeeBox" style="width: 110px;">
+                                                    <option value="">--Select One -- </option>
+                                                    <option value="Black">Black</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Forward">Forward</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="margin-top: 10px;"><b>Risk:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <!--<input type="text" style="width: 70px; height: 10px;" id="txtEditProfileRisk" />-->
+                                                <select id="txtEditProfileRisk" style="width: 110px;">
+                                                    <option value="">--Select One -- </option>
+                                                    <option value="Low">Low</option>
+                                                    <option value="Moderate">Moderate</option>
+                                                    <option value="High">High</option>
+                                                </select>
+
+                                            </td>
+                                            <td style="padding-left: 25px;"><b>Walk or Ride:</b></td>
+                                            <td style="padding-left: 5px;">
+                                                <!--  <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileMode" />-->
+                                                <select id="txtEditProfileMode" style="width: 110px;">
+                                                    <option value="">--Select One -- </option>
+                                                    <option value="Walk">Walk</option>
+                                                    <option value="Ride">Ride</option>
+                                                    <option value="Either">Either</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </fieldset>
+
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <fieldset style="border: solid 1px #3D800C; padding: 0px 15px 15px 15px; margin: 0 auto;">
+                                    <legend style="padding-left: 10px;">Weekly Games</legend>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input type="checkbox" id="chkUpdateProfileWednesdayGame" />
+                                            </td>
+                                            <td><b>Wednesday</b></td>
+                                            <td style="padding-left: 10px;">
+                                                <input type="checkbox" id="chkUpdateProfileFridayGame" />
+                                            </td>
+                                            <td><b>Friday</b></td>
+
+                                            <td style="padding-left: 10px;">
+                                                <input type="checkbox" id="chkUpdateProfileSaturdayGame" />
+                                            </td>
+                                            <td><b>Saturday</b></td>
+                                            <td style="padding-left: 10px;">
+                                                <input type="checkbox" id="chkUpdateProfileSundayGame" />
+                                            </td>
+                                            <td><b>Sunday</b></td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <fieldset style="border: solid 1px #3D800C; padding: 0px 15px 15px 15px; margin: 0 auto;">
+                                    <legend style="padding-left: 10px;">Profile Status</legend>
+                                    <input type="radio" name="ProfileStatus" value="1">Active&nbsp;&nbsp;
+                                    <input type="radio" name="ProfileStatus" value="0">Inactive
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center; padding: 15px;">
+                                <a class="-button green" id="a2" onclick="UpdateProfile();"><span class="-">Update</span></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center; color: red;">
+                                <label id="lblUpdateProfileMessage"></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="NormalModalPopup">
+            <div class="ChangePasswordPopup">
+                <div class="header">
+                    Change Password
+                </div>
+                <div style="padding: 20px;" id="divChangePasswordForm">
+                    <table style="margin: 0 auto;">
+
+                        <tr>
+                            <td style="padding: 10px 0px 10px 0px;">Email Address:</td>
+                            <td style="padding: 10px 0px 10px 0px;">
+                                <input type="text" style="width: 180px; height: 10px;" id="txtcpEmail" />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 0px 10px 0px;">Current Password:</td>
+                            <td style="padding: 10px 0px 10px 0px;">
+                                <input type="password" id="txtcpCurrentPassword" style="width: 180px; height: 10px;" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 0px 10px 0px;">New Password:</td>
+                            <td style="padding: 10px 0px 10px 0px;">
+                                <input type="password" id="txtcpNewPassword" style="width: 180px; height: 10px;" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 0px 10px 0px;">Confirm New Password:</td>
+                            <td style="padding: 10px 0px 10px 0px;">
+                                <input type="password" id="txtcpConfirmNewPassword" style="width: 180px; height: 10px;" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center; padding: 15px;">
+                                <a class="-button green" id="a3" onclick="ChangePassword();"><span class="-">Submit</span></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding: 10px 0px 10px 0px;">
+                                <label id="lblChangePasswordMessage"></label>
+                            </td>
+                        </tr>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="NormalModalPopup">
+            <div class="ResetPasswordPopup">
+                <div class="header">
+                    Reset Password
+                </div>
+                <div style="padding: 20px;" id="divResetPasswordForm">
+                    <table style="margin: 0 auto;">
 
-    <div class="NormalModalPopup">
-        <div class="EditPlayerPopup">
-            <div class="header">
-                Update Profile
-            </div>
-            <div id="divEditProfileLogin" style="margin: 50px; border: solid 1px #3D800C">
-                <table style="margin: 0 auto;">
-                    <tr>
-                        <td style="padding: 15px;"><b>Email Address:</b></td>
-                        <td style="padding: 15px;">
-                            <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileEmail" />
+                        <tr>
+                            <td style="padding: 10px 0px 10px 0px;">Email Address:</td>
+                            <td style="padding: 10px 0px 10px 0px;">
+                                <input type="text" style="width: 180px; height: 10px;" id="txtrpEmail" />
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 15px;"><b>Password:</b></td>
-                        <td style="padding: 15px;">
-                            <input type="password" style="width: 180px; height: 10px;" id="txtEditProfilePassword" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center;">
-                            <a style="cursor: pointer; text-decoration: underline;" onclick="ResetPasswordPopup()">Reset Password</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center; padding: 15px;">
-                            <a class="-button green" id="ancEditProfileAuthenticateSubmit" onclick="EditProfileAuthenticate();"><span class="-">Submit</span></a>
+                            </td>
+                            <td style="padding: 10px 0px 10px 0px;">
+                                <a class="-button green" id="a5" onclick="ResetPassword();"><span class="-">Submit</span></a>
+                            </td>
+                        </tr>
 
-                        </td>
-                    </tr>
 
-                </table>
-                <div style="text-align: center; position: absolute; padding: 10px; color: red;">
-
-                    <label id="lblEditProfileAuthenticateError"></label>
-
+                        <tr>
+                            <td colspan="2" style="padding: 10px 0px 10px 0px;">
+                                <label id="lblResetPasswordMessage"></label>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
-            <div id="divEditProfileForm" style="display: none; padding: 10px;">
-                <table style="margin: 0 auto;">
-                    <tr>
-                        <td style="padding: 5px;"><b>Name:</b></td>
-                        <td>
-                            <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileName" />
-                            <input type="hidden" id="hdnEditProfilePlayerId" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 5px;"><b>Email:</b></td>
-                        <td>
-                            <input type="text" style="width: 180px; height: 10px;" id="txtEditProfileFormEmail" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-
-                            <fieldset style="border: solid 1px #3D800C; width: 400px; padding: 0px 15px 15px 15px;">
-                                <legend>Type</legend>
-                                <table>
-                                    <tr>
-                                        <td><b>Tee Off:</b></td>
-                                        <td style="padding-left: 5px;">
-                                            <select id="txtEditProfileTeeOff" style="width: 110px;">
-                                                <option value="">--Select One -- </option>
-                                                <option value="Early">Early</option>
-                                                <option value="Either">Either</option>
-                                                <option value="Late">Late</option>
-                                                <option value="After The Field">After the Field</option>
-                                            </select>
-                                            <!--   <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeOff" /></td>-->
-                                        <td style="padding-left: 25px;"><b>Tee Box:</b></td>
-                                        <td style="padding-left: 5px;">
-                                            <!--                                            <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileTeeBox" />-->
-                                            <select id="txtEditProfileTeeBox" style="width: 110px;">
-                                                <option value="">--Select One -- </option>
-                                                <option value="Black">Black</option>
-                                                <option value="Blue">Blue</option>
-                                                <option value="White">White</option>
-                                                <option value="Forward">Forward</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="margin-top: 10px;"><b>Risk:</b></td>
-                                        <td style="padding-left: 5px;">
-                                            <!--<input type="text" style="width: 70px; height: 10px;" id="txtEditProfileRisk" />-->
-                                            <select id="txtEditProfileRisk" style="width: 110px;">
-                                                <option value="">--Select One -- </option>
-                                                <option value="Low">Low</option>
-                                                <option value="Moderate">Moderate</option>
-                                                <option value="High">High</option>
-                                            </select>
-
-                                        </td>
-                                        <td style="padding-left: 25px;"><b>Walk or Ride:</b></td>
-                                        <td style="padding-left: 5px;">
-                                            <!--  <input type="text" style="width: 70px; height: 10px;" id="txtEditProfileMode" />-->
-                                            <select id="txtEditProfileMode" style="width: 110px;">
-                                                <option value="">--Select One -- </option>
-                                                <option value="Walk">Walk</option>
-                                                <option value="Ride">Ride</option>
-                                                <option value="Either">Either</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-
-                                </table>
-
-                            </fieldset>
-
-
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <fieldset style="border: solid 1px #3D800C; padding: 0px 15px 15px 15px; margin: 0 auto;">
-                                <legend style="padding-left: 10px;">Weekly Games</legend>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" id="chkUpdateProfileWednesdayGame" />
-                                        </td>
-                                        <td><b>Wednesday</b></td>
-                                        <td style="padding-left: 10px;">
-                                            <input type="checkbox" id="chkUpdateProfileFridayGame" />
-                                        </td>
-                                        <td><b>Friday</b></td>
-
-                                        <td style="padding-left: 10px;">
-                                            <input type="checkbox" id="chkUpdateProfileSaturdayGame" />
-                                        </td>
-                                        <td><b>Saturday</b></td>
-                                        <td style="padding-left: 10px;">
-                                            <input type="checkbox" id="chkUpdateProfileSundayGame" />
-                                        </td>
-                                        <td><b>Sunday</b></td>
-                                    </tr>
-                                </table>
-                            </fieldset>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <fieldset style="border: solid 1px #3D800C; padding: 0px 15px 15px 15px; margin: 0 auto;">
-                                <legend style="padding-left: 10px;">Profile Status</legend>
-                                <input type="radio" name="ProfileStatus" value="1">Active&nbsp;&nbsp;
-                                <input type="radio" name="ProfileStatus" value="0">Inactive
-                            </fieldset>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center; padding: 15px;">
-                            <a class="-button green" id="a2" onclick="UpdateProfile();"><span class="-">Update</span></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center; color: red;">
-                            <label id="lblUpdateProfileMessage"></label>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
         </div>
+
+        <div id="mask"></div>
     </div>
-    <div class="NormalModalPopup">
-        <div class="ChangePasswordPopup">
-            <div class="header">
-                Change Password
-            </div>
-            <div style="padding: 20px;" id="divChangePasswordForm">
-                <table style="margin: 0 auto;">
+    <div style="position:absolute; width:100%; height:100%;" id="divmobilersvp">
 
-                    <tr>
-                        <td style="padding: 10px 0px 10px 0px;">Email Address:</td>
-                        <td style="padding: 10px 0px 10px 0px;">
-                            <input type="text" style="width: 180px; height: 10px;" id="txtcpEmail" />
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px 0px 10px 0px;">Current Password:</td>
-                        <td style="padding: 10px 0px 10px 0px;">
-                            <input type="password" id="txtcpCurrentPassword" style="width: 180px; height: 10px;" />
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px 0px 10px 0px;">New Password:</td>
-                        <td style="padding: 10px 0px 10px 0px;">
-                            <input type="password" id="txtcpNewPassword" style="width: 180px; height: 10px;" />
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td style="padding: 10px 0px 10px 0px;">Confirm New Password:</td>
-                        <td style="padding: 10px 0px 10px 0px;">
-                            <input type="password" id="txtcpConfirmNewPassword" style="width: 180px; height: 10px;" />
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: center; padding: 15px;">
-                            <a class="-button green" id="a3" onclick="ChangePassword();"><span class="-">Submit</span></a>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="padding: 10px 0px 10px 0px;">
-                            <label id="lblChangePasswordMessage"></label>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="NormalModalPopup">
-        <div class="ResetPasswordPopup">
-            <div class="header">
-                Reset Password
-            </div>
-            <div style="padding: 20px;" id="divResetPasswordForm">
-                <table style="margin: 0 auto;">
-
-                    <tr>
-                        <td style="padding: 10px 0px 10px 0px;">Email Address:</td>
-                        <td style="padding: 10px 0px 10px 0px;">
-                            <input type="text" style="width: 180px; height: 10px;" id="txtrpEmail" />
-
-                        </td>
-                        <td style="padding: 10px 0px 10px 0px;">
-                            <a class="-button green" id="a5" onclick="ResetPassword();"><span class="-">Submit</span></a>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td colspan="2" style="padding: 10px 0px 10px 0px;">
-                            <label id="lblResetPasswordMessage"></label>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
     </div>
 
-    <div id="mask"></div>
     <!--[if lt IE9]>
             <script type="text/javascript" src="assets/scripts/JSON2.js"></script>
         <![endif]-->
@@ -836,102 +841,122 @@
 
         }
 
-        function OpenRSVPPopup(GameID, OpenPopup) {
-            $('#hdnRSVPPopupGameId').val(GameID);
-            $('#txtrsvpEmail').val('');
-            $('#RsvpEmailError').html('');
-            if ($.cookie("SSLEVIN_GolfRsvpEmail") != undefined) {
-                $('#txtrsvpEmail').val($.cookie("SSLEVIN_GolfRsvpEmail"));
-                $('#chkSaveEmail').attr('checked', 'checked');
-            }
-            $.ajax({
-                type: "Post",
-                url: 'Webservices/GolfService.asmx/Web_RetriveGameDetail',
-                data: '{GameID:"' + GameID + '"}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (response) {
-                    var obj = $.parseJSON(response.d);
-                    oGameDetailTable = $('#tblGameAttending').dataTable({  //grid is the id of the table
-                        'aaData': obj.Attending,
-                        "bDestroy": true,
-                        'bPaginate': true,
-                        "sPaginationType": "full_numbers",
-                        "iDisplayLength": 10,
-                        'bInfo': false,
-                        'bFilter': true,
-                        "bJQueryUI": true,
-                        "bSort": true,
-                        "bAutoWidth": true,
-                        "sDom": '<"top"i>rt<"bottom"flp>',
-                        "sScrollY": "150px",
-                        "bScrollCollapse": true,
-                        "oLanguage": {
-                            "sSearch": ""
-                        }
-                        /*,"aoColumns": [
-                        null, null, null, null, null,
-                        { "bVisible": false }, { "bVisible": false }
-                    ]*/
-                    });
-                    if (oGameDetailTable.length > 0) {
-                        setTimeout(function () {
-                            $(oGameDetailTable).css({ width: $(oGameDetailTable).parent().width() });
-                            oGameDetailTable.fnAdjustColumnSizing();
-                        }, 200);
-                    }
-                    oGameDetailTable.fnSort([[0, 'desc']]);
-                    $('#tblGameAttending_filter input[type=text]').val("Enter Player Name To Search");
-                    $('#tblGameAttending_filter input[type=text]').addClass("search_init");
-                    $('#tblGameAttending_filter input[type=text]').focus(function () {
-                        if (this.className == "search_init") {
-                            this.className = "";
-                            this.value = "";
-                        }
-                    });
-
-                    $('#tblGameAttending_filter input[type=text]').blur(function (i) {
-                        if (this.value == "") {
-                            this.className = "search_init";
-                            this.value = "Enter Player Name To Search";
-                        }
-                    });
-                    //lblGameDate, lblGameTime, lblAttending
-                    var Gameinfo = obj.GameInfo;
-                    $('#lblGameDate').html(Gameinfo[0][2]);
-                    $('#lblGameTime').html(Gameinfo[0][3]);
-                    $('#lblGameCaptain').html(Gameinfo[0][7]);
-
-                    var playinginfo = "<b>Playing:</b>&nbsp;" + Gameinfo[0][4];
-                    playinginfo += "&nbsp;&nbsp;&nbsp;&nbsp;<b>Not&nbsp;Playing:</b>&nbsp;" + Gameinfo[0][5];
-                    playinginfo += "&nbsp;&nbsp;&nbsp;&nbsp;<b>Not&nbsp;Responded:</b>&nbsp;" + Gameinfo[0][6];
-
-
-                    if (isNaN(Date.parse(Gameinfo[0][2])) == false) {
-                        var GameDate = new Date(Date.parse(Gameinfo[0][2]));
-                        if (GameDate.valueOf() <= (new Date()).valueOf()) {
-                            OpenPopup = false;
-                        }
-                    }
-
-                    $('#lblAttendance').html(playinginfo);
-
-                    $('#txtrsvpEmail').focus();
-                    $('#GamePopupTitle').html(Gameinfo[0][1]);
-                    // $('#lblAttending').html(Gameinfo[0]);
-                    //  new FixedColumns(oGameDetailTable);
-                    if (OpenPopup != false) {
-                        launchPopup('.NormalModalPopup .RSVPPopup', 700, false, true);
-                        $('#tblRSVPEmailSubmit').show();
-                        $('#divrsvpSubmit').hide('blind');
-
-                    }
-
-                },
-                error: function (xhr, status, error) {
-                    alert(xhr.responseText);
-                }
+        function hideMobileRSVPPOpup()
+        {
+            $('#divmobilersvp').animate({ 'top': (window.innerHeight + 200) + 'px' }, 800, function () {
+                $('#divmobilersvp').html('');
+                $('#divindexPage').show();
             });
+            
+        }
+        function OpenRSVPPopup(GameID, OpenPopup) {
+            var windowWidth = window.screen.width < window.outerWidth ?
+                  window.screen.width : window.outerWidth;
+            if (windowWidth < 800) {
+                window.scrollTo(0,0);
+                $('#divindexPage').hide();
+                $('#divmobilersvp').css('top', $(window).height() + 100);
+                $('#divmobilersvp').css('left', '0px');
+                $('#divmobilersvp').html('<iframe src="RSVP.html?GameID=' + GameID + '" width="' + window.innerWidth + 'px" height="' + window.innerHeight + 'px"/>');
+                $('#divmobilersvp').animate({ 'top': '0px' }, 800, function () { });
+            }
+            else {
+                $('#hdnRSVPPopupGameId').val(GameID);
+                $('#txtrsvpEmail').val('');
+                $('#RsvpEmailError').html('');
+                if ($.cookie("SSLEVIN_GolfRsvpEmail") != undefined) {
+                    $('#txtrsvpEmail').val($.cookie("SSLEVIN_GolfRsvpEmail"));
+                    $('#chkSaveEmail').attr('checked', 'checked');
+                }
+                $.ajax({
+                    type: "Post",
+                    url: 'Webservices/GolfService.asmx/Web_RetriveGameDetail',
+                    data: '{GameID:"' + GameID + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        var obj = $.parseJSON(response.d);
+                        oGameDetailTable = $('#tblGameAttending').dataTable({  //grid is the id of the table
+                            'aaData': obj.Attending,
+                            "bDestroy": true,
+                            'bPaginate': true,
+                            "sPaginationType": "full_numbers",
+                            "iDisplayLength": 10,
+                            'bInfo': false,
+                            'bFilter': true,
+                            "bJQueryUI": true,
+                            "bSort": true,
+                            "bAutoWidth": true,
+                            "sDom": '<"top"i>rt<"bottom"flp>',
+                            "sScrollY": "150px",
+                            "bScrollCollapse": true,
+                            "oLanguage": {
+                                "sSearch": ""
+                            }
+                            /*,"aoColumns": [
+                            null, null, null, null, null,
+                            { "bVisible": false }, { "bVisible": false }
+                        ]*/
+                        });
+                        if (oGameDetailTable.length > 0) {
+                            setTimeout(function () {
+                                $(oGameDetailTable).css({ width: $(oGameDetailTable).parent().width() });
+                                oGameDetailTable.fnAdjustColumnSizing();
+                            }, 200);
+                        }
+                        oGameDetailTable.fnSort([[0, 'desc']]);
+                        $('#tblGameAttending_filter input[type=text]').val("Enter Player Name To Search");
+                        $('#tblGameAttending_filter input[type=text]').addClass("search_init");
+                        $('#tblGameAttending_filter input[type=text]').focus(function () {
+                            if (this.className == "search_init") {
+                                this.className = "";
+                                this.value = "";
+                            }
+                        });
+
+                        $('#tblGameAttending_filter input[type=text]').blur(function (i) {
+                            if (this.value == "") {
+                                this.className = "search_init";
+                                this.value = "Enter Player Name To Search";
+                            }
+                        });
+                        //lblGameDate, lblGameTime, lblAttending
+                        var Gameinfo = obj.GameInfo;
+                        $('#lblGameDate').html(Gameinfo[0][2]);
+                        $('#lblGameTime').html(Gameinfo[0][3]);
+                        $('#lblGameCaptain').html(Gameinfo[0][7]);
+
+                        var playinginfo = "<b>Playing:</b>&nbsp;" + Gameinfo[0][4];
+                        playinginfo += "&nbsp;&nbsp;&nbsp;&nbsp;<b>Not&nbsp;Playing:</b>&nbsp;" + Gameinfo[0][5];
+                        playinginfo += "&nbsp;&nbsp;&nbsp;&nbsp;<b>Not&nbsp;Responded:</b>&nbsp;" + Gameinfo[0][6];
+
+
+                        if (isNaN(Date.parse(Gameinfo[0][2])) == false) {
+                            var GameDate = new Date(Date.parse(Gameinfo[0][2]));
+                            if (GameDate.valueOf() <= (new Date()).valueOf()) {
+                                OpenPopup = false;
+                            }
+                        }
+
+                        $('#lblAttendance').html(playinginfo);
+
+                        $('#txtrsvpEmail').focus();
+                        $('#GamePopupTitle').html(Gameinfo[0][1]);
+                        // $('#lblAttending').html(Gameinfo[0]);
+                        //  new FixedColumns(oGameDetailTable);
+                        if (OpenPopup != false) {
+                            launchPopup('.NormalModalPopup .RSVPPopup', 700, false, true);
+                            $('#tblRSVPEmailSubmit').show();
+                            $('#divrsvpSubmit').hide('blind');
+
+                        }
+
+                    },
+                    error: function (xhr, status, error) {
+                        alert(xhr.responseText);
+                    }
+                });
+            }
         }
 
 

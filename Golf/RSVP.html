@@ -66,7 +66,7 @@
             -moz-box-shadow: 5px 5px 5px black;
             -webkit-box-shadow: 5px 5px 5px black;
             box-shadow: 5px 5px 5px black;
-            margin-top: 20px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -78,13 +78,14 @@
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">RSVP</a>
+                    <a class="navbar-brand" href="#" id="ancPageTitle" style="width:100%;">RSVP</a>
                 </div>
             </div>
         </div>
 
         <!-- Begin page content -->
         <div class="container">
+            <div style="padding-top:15px; color:white;"><a id="ancHomeButton" style="color:white; text-decoration:none;"><i class="glyphicon glyphicon-home"></i>&nbsp;Home</a></div>
             <div id="rsvpAction">
                 <table id="tblRSVPEmailSubmit" style="margin: 0 auto;">
                     <tr>
@@ -99,7 +100,7 @@
                     </tr>
                     <tr>
                         <td style="padding: 10px 0px 5px 0px;">
-                            <input type="checkbox" id="chkSaveEmail" />&nbsp;Save email on this computer&nbsp;&nbsp;
+                            <input type="checkbox" id="chkSaveEmail" />&nbsp;Save email on this device&nbsp;&nbsp;
                         </td>
                     </tr>
                     <tr>
@@ -108,9 +109,10 @@
                     </tr>
 
                     <tr>
-                        <td style="padding: 0; color: red; position: absolute; margin-top: 5px;">
-                            <label id="RsvpEmailError"></label>
-
+                        <td style="padding: 0; text-align:center; color: red;">
+                            <div style="padding: 10px;  position: relative;  height:0;">
+                                <label id="RsvpEmailError"></label>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -223,7 +225,110 @@
                     </table>
 
                 </div>
+
             </div>
+            <br />
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne" href="javascript:void(0)" style="text-decoration:none;">
+                            <i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
+                            <h4 class="panel-title">
+                                Game Info
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table style=" padding: 20px; width: 100%; margin: 0 auto;">
+                                <tr>
+                                    <td><b>Captain:</b></td>
+                                    <td>
+                                        <label id="lblGameCaptain"></label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Game Date:</b></td>
+                                    <td>
+                                        <label id="lblGameDate"></label>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><b>Game Time:</b></td>
+                                    <td>
+                                        <label id="lblGameTime"></label>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                            <input type="hidden" id="hdnRSVPPopupGameId" />
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo" href="javascript:void(0)" style="text-decoration:none;">
+                            <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
+                            <h4 class="panel-title">
+                                Player Info
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+
+                            <div class="panel-group" id="accordionPlayerInfo">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" data-toggle="collapse" data-parent="#accordionPlayerInfo" data-target="#collapseOnePlaying">
+                                        <a data-toggle="collapse" data-parent="#accordionPlayerInfo" data-target="#collapseOnePlaying" href="javascript:void(0)">
+                                            <i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
+                                            <h4 class="panel-title">
+                                                <label id="lblPlayingPlayers"></label>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOnePlaying" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <label id="lblPlayingPlayersDetail"></label>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top:5px;" class="panel-heading" data-toggle="collapse" data-parent="#accordionPlayerInfo" data-target="#collapseOneNotPlaying">
+                                        <a data-toggle="collapse" data-parent="#accordionPlayerInfo" data-target="#collapseOneNotPlaying" href="javascript:void(0)">
+                                            <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
+                                            <h4 class="panel-title">
+                                                <label id="lblNotPlayingPlayers"></label>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOneNotPlaying" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <label id="lblNotPlayingPlayersDetail"></label>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top:5px;" class="panel-heading" data-toggle="collapse" data-parent="#accordionPlayerInfo" data-target="#collapseOneNotResponded">
+                                        <a data-toggle="collapse" data-parent="#accordionPlayerInfo" data-target="#collapseOneNotResponded" href="javascript:void(0)">
+                                            <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
+                                            <h4 class="panel-title">
+                                                <label id="lblNotRespondedPlayers"></label>
+                                            </h4>
+                                        </a>
+                                    </div>
+                                    <div id="collapseOneNotResponded" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <label id="lblNotRespondedPlayersDetail"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
@@ -233,13 +338,114 @@
         </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/bootstrap.js"></script>
     <script type="text/javascript" src="assets/scripts/scripts.js"></script>
     <script type="text/javascript" src="assets/scripts/GeneralScript.js?v=1"></script>
     <script type="text/javascript">
+        var APPLICATIONID = '4A1BD17C-50F5-4E51-8C3F-B161BAB5E411';
+        $(document).ready(function () {
+            var GameId;
+            var vars = [], hash;
+            var q = document.URL.split('?')[1];
+            if (q != undefined) {
+                q = q.split('&');
+                for (var i = 0; i < q.length; i++) {
+                    hash = q[i].split('=');
+                    vars.push(hash[1]);
+                    vars[hash[0]] = hash[1];
+                }
+            }
+            GameId = vars['GameID'];
+            $('#hdnRSVPPopupGameId').val(GameId);
+            $('#accordion').on('hidden.bs.collapse', toggleChevron);
+            $('#accordion').on('shown.bs.collapse', toggleChevron);
+            PopulateRSVPPage();
+            $('#ancHomeButton').click(function (e) {
+                window.parent.hideMobileRSVPPOpup();
+            });
+        });
+
+        function toggleChevron(e) {
+            $(e.target)
+                .prev('.panel-heading')
+                .find("i.indicator")
+                .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+        }
+
+        function PopulateRSVPPage() {
+            var GameID = $('#hdnRSVPPopupGameId').val();
+            $('#txtrsvpEmail').val('');
+            $('#RsvpEmailError').html('');
+            if ($.cookie("SSLEVIN_GolfRsvpEmail") != undefined) {
+                $('#txtrsvpEmail').val($.cookie("SSLEVIN_GolfRsvpEmail"));
+                $('#chkSaveEmail').attr('checked', 'checked');
+            }
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_RetriveGameDetail',
+                data: '{GameID:"' + GameID + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var obj = $.parseJSON(response.d);
+                    var AttendingPlayers = '', NotAttendingPlayers = '', NotRespondedPlayers = '';
+                    $.each(obj.Attending, function (i, val) {
+                        if (val[0] != undefined && val[0] != null) {
+                            AttendingPlayers += "<li>" + val[0] + "</li>";
+                        }
+                        if (val[1] != undefined && val[1] != null) {
+                            NotAttendingPlayers += "<li>" + val[1] + "</li>";
+                        }
+                        if (val[2] != undefined && val[2] != null) {
+                            NotRespondedPlayers += "<li>" + val[2] + "</li>";
+                        }
+                    });
+
+                    var Gameinfo = obj.GameInfo;
+                    $('#lblGameDate').html(Gameinfo[0][2]);
+                    $('#lblGameTime').html(Gameinfo[0][3]);
+                    if (Gameinfo[0][7] != undefined && Gameinfo[0][7] != null)
+                        $('#lblGameCaptain').html(Gameinfo[0][7]);
+                    else
+                        $('#lblGameCaptain').html("N/A");
+
+                    $('#lblPlayingPlayers').html(Gameinfo[0][4] + " - " + "<b>Playing</b>");
+                    $('#lblPlayingPlayersDetail').html("<ul>" + AttendingPlayers + "</ul>");
+                    $('#lblNotPlayingPlayers').html(Gameinfo[0][5] + " - " + "<b>Not Playing</b>");
+                    $('#lblNotPlayingPlayersDetail').html("<ul>" + NotAttendingPlayers + "</ul>");
+                    $('#lblNotRespondedPlayers').html(Gameinfo[0][6] + " - " + "<b>Not Responded</b>");
+                    $('#lblNotRespondedPlayersDetail').html("<ul>" + NotRespondedPlayers + "</ul>");
+
+                    if (isNaN(Date.parse(Gameinfo[0][2])) == false) {
+                        var GameDate = new Date(Date.parse(Gameinfo[0][2]));
+                        if (GameDate.valueOf() <= (new Date()).valueOf()) {
+                            OpenPopup = false;
+                        }
+                    }
+
+
+                    $('#txtrsvpEmail').focus();
+                    $('#ancPageTitle').html("RSVP for " + Gameinfo[0][1]);
+                    // $('#lblAttending').html(Gameinfo[0]);
+                    //  new FixedColumns(oGameDetailTable);
+
+                    $('#tblRSVPEmailSubmit').show();
+                    $('#divrsvpSubmit').hide('blind');
+
+
+
+                },
+                error: function (xhr, status, error) {
+                    alert(xhr.responseText);
+                }
+            });
+        }
+
         function RSVPEmailSubmit() {
-            var GameId = '93'; //$('#hdnRSVPPopupGameId').val()
+            var GameID = $('#hdnRSVPPopupGameId').val();
             $('#rsvpAction').showLoading();
             $('#rsvpError').html('');
+            $('#RsvpEmailError').html('');
             $('#rdPlaying').removeAttr('checked');
             $('#rdNotPlaying').removeAttr('checked');
             $('#txtGuest1').val('');
@@ -250,7 +456,7 @@
             $.ajax({
                 type: "Post",
                 url: 'Webservices/GolfService.asmx/Web_ValidateRSVPEmail',
-                data: '{EmailAddress:"' + $('#txtrsvpEmail').val() + '",GameId:"' + GameId + '"}',
+                data: '{EmailAddress:"' + $('#txtrsvpEmail').val() + '",GameId:"' + GameID + '"}',
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
@@ -293,21 +499,26 @@
                         $('#hdnRSVPPlayerID').val(obj[0]['PlayerID']);
 
                         $('#RsvpEmailError').html('');
-                        if ($('#chkSaveEmail').attr('checked') == 'checked') {
+                        if ($('#chkSaveEmail').attr('checked') == 'checked' || $('#chkSaveEmail').prop('checked') == true) {
                             $.cookie("SSLEVIN_GolfRsvpEmail", $('#txtrsvpEmail').val());
                         }
                         else {
                             $.cookie("SSLEVIN_GolfRsvpEmail", null);
                         }
+                        setTimeout(function () {
+                            $('#rsvpAction').hideLoading();
+                            $('#tblRSVPEmailSubmit').hide();
+                            $('#divrsvpSubmit').show('blind');
+                        }, 500);
                     }
                     else {
                         $('#RsvpEmailError').html(Message);
-                    }
-                    setTimeout(function () {
+
                         $('#rsvpAction').hideLoading();
-                        $('#tblRSVPEmailSubmit').hide();
-                        $('#divrsvpSubmit').show('blind');
-                    }, 500);
+
+
+                    }
+
                 },
                 error: function (xhr, status, error) {
                     $('#RsvpEmailError').html("An error occured while processing.<br>Please contact system administrator.");
@@ -325,6 +536,56 @@
                 $('#tdPlayingFields').show('blind');
             else
                 $('#tdPlayingFields').hide('blind');
+        }
+
+        function SubmitRSVP() {
+            var Guest1 = $('#txtGuest1').val();
+            var Guest2 = $('#txtGuest2').val();
+            var Guests = '';
+            if (Guest1 == $('#txtGuest1').attr('title'))
+                Guest1 = '';
+            if (Guest2 == $('#txtGuest2').attr('title'))
+                Guest2 = '';
+            Guests += Guest1;
+            Guests += (Guests.length > 0 && Guest2.length > 0 ? '|' : '') + Guest2;
+            $('#rsvpAction').showLoading();
+            var isPlaying;
+
+            if ($('#rdPlaying').attr('checked') == "checked" || $('#rdPlaying').prop('checked') == true) {
+                isPlaying = true;
+            }
+            if ($('#rdNotPlaying').attr('checked') == "checked" || $('#rdNotPlaying').prop('checked') == true) {
+                isPlaying = false;
+            }
+            if (isPlaying == undefined || isPlaying == null) {
+                $('#rsvpError').html("Please check an option.");
+                return;
+            }
+            var RSVP_TeeOff, RSVP_TeeBox, RSVP_Risk, RSVP_Mode;
+            RSVP_TeeOff = $('#txtRSVPTeeOff').val();
+            RSVP_TeeBox = $('#txtRSVPTeeBox').val();
+            RSVP_Risk = $('#txtRSVPRisk').val();
+            RSVP_Mode = $('#txtRSVPMode').val();
+
+            $.ajax({
+                type: "Post",
+                url: 'Webservices/GolfService.asmx/Web_RSVP_Game',
+                data: '{PlayerId:"' + $('#hdnRSVPPlayerID').val() + '",GameId:"' + $('#hdnRSVPPopupGameId').val() + '",isPlaying:"' + isPlaying + '",Guests:"' + Guests + '",RSVP_TeeOff:"' + RSVP_TeeOff + '",RSVP_TeeBox:"' + RSVP_TeeBox + '",RSVP_Risk:"' + RSVP_Risk + '",RSVP_Mode:"' + RSVP_Mode + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    setTimeout(function () {
+                        $('#rsvpAction').hideLoading(); $('#tblRSVPEmailSubmit').show('blind');
+                        $('#RsvpEmailError').html('<font color="green">Submitted Successfully !!! </font>');
+                        $('#divrsvpSubmit').hide();
+                        PopulateRSVPPage();
+                    }, 500);
+                },
+                error: function (xhr, status, error) {
+                    $('#RsvpEmailError').html("An error occured while processing.<br>Please contact system administrator.");
+                    setTimeout(function () { $('#rsvpAction').hideLoading(); }, 500);
+                }
+            });
         }
     </script>
 
